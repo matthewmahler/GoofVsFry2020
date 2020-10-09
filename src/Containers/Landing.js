@@ -62,7 +62,7 @@ const Landing = () => {
                 <div>
                   <a href="https://fontmeme.com/super-smash-bros-font/"><img src="https://fontmeme.com/permalink/201009/49f3a38b18958749c4dd576d87d9db4f.png" alt="super-smash-bros-font" border="0" /></a>
                   <Img
-                    fluid={data.allImageSharp.edges[1].node.fluid}
+                    fluid={data.allImageSharp.edges[2].node.fluid}
                     fadeIn
                     backgroundColor={`#292929`}
                   />
@@ -101,7 +101,7 @@ const query = graphql`
       }
     }
   }
-  allImageSharp(limit: 2) {
+  allImageSharp {
     edges {
       node {
         fluid {

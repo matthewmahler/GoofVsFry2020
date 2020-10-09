@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 
 dotenv.config()
 
-const { spaceId, accessToken } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 module.exports = {
   siteMetadata: {
     title: 'Goof Vs Fry 2020',
@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId,
-        accessToken,
+        spaceId: CONTENTFUL_SPACE_ID,
+        accessToken: CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {

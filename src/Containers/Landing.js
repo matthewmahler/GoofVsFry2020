@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   min-height: 95vh;
   width: 100vw;
-  background-image: linear-gradient(to bottom, #040404, #04040400, #040404);
+  background-image: linear-gradient(to bottom, #040404, #040404ee,#04040400, #040404ee,#040404);
   background-size: cover;
   background-repeat: no-repeat;
   div {
@@ -30,7 +30,7 @@ const Container = styled.div`
         color: #eeeeee;
       }
       img{
-        width: 100%;
+        width: 90%;
       }
     }
   }
@@ -60,7 +60,11 @@ const Landing = () => {
             <Container>
               <div>
                 <div>
-                  <a href="https://fontmeme.com/super-smash-bros-font/"><img src="https://fontmeme.com/permalink/201009/49f3a38b18958749c4dd576d87d9db4f.png" alt="super-smash-bros-font" border="0" /></a>
+                  <img
+                    src="https://fontmeme.com/permalink/201009/49f3a38b18958749c4dd576d87d9db4f.png"
+                    alt="super-smash-bros-font"
+                    border="0"
+                  />
                   <Img
                     fluid={data.allImageSharp.edges[2].node.fluid}
                     fadeIn
@@ -68,7 +72,11 @@ const Landing = () => {
                   />
                 </div>
                 <div>
-                  <a href="https://fontmeme.com/super-smash-bros-font/"><img src="https://fontmeme.com/permalink/201009/71ffc2ded6db45d7d0d88ce296e5efc5.png" alt="super-smash-bros-font" border="0" /></a>
+                  <img
+                    src="https://fontmeme.com/permalink/201009/71ffc2ded6db45d7d0d88ce296e5efc5.png"
+                    alt="super-smash-bros-font"
+                    border="0"
+                  />
                   <Img
                     fluid={data.allImageSharp.edges[0].node.fluid}
                     fadeIn

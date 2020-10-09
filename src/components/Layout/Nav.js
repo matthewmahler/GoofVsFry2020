@@ -30,7 +30,6 @@ const Container = styled.header`
       font-size: 4rem;
       margin: 0;
       padding: 2rem;
-      font-family: 'Pacifico';
     }
 
     ul {
@@ -96,13 +95,13 @@ const Nav = () => {
         transition={{ damping: 300 }}
       >
         <motion.h1 animate={{ x: 0 }} initial={{ x: '-2rem' }}>
-          <a href="#Landing">Election 2020</a>
+          <a href="/">Election 2020</a>
         </motion.h1>
         <motion.ul variants={ulVariants}>
           {navItems.map((item, key) => {
             return (
               <motion.li variants={liVariants} key={key}>
-                <a href={`/${item}`}>{item}</a>
+                <a href={`/${item.replace(/\s/g, '')}`}>{item}</a>
               </motion.li>
             );
           })}

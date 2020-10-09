@@ -17,12 +17,13 @@ html{
     ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
-}
+    }
+    font-family: 'Open Sans', sans-serif;
+    
 
  
   body, main {
     margin:0;
-    font-family: "Montserrat";
     
   }
   @media all and (max-width: 1200px) {

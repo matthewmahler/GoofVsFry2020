@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -39,11 +40,9 @@ const Container = styled.header`
         font-size: 2rem;
         margin-right: 2rem;
         display: inline;
-       
       }
     }
   }
- 
 `;
 const Nav = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -95,13 +94,13 @@ const Nav = () => {
         transition={{ damping: 300 }}
       >
         <motion.h1 animate={{ x: 0 }} initial={{ x: '-2rem' }}>
-          <a href="/">Election 2020</a>
+          <Link to="/">Election 2020</Link>
         </motion.h1>
         <motion.ul variants={ulVariants}>
           {navItems.map((item, key) => {
             return (
               <motion.li variants={liVariants} key={key}>
-                <a href={`/${item.replace(/\s/g, '')}`}>{item}</a>
+                <Link to={`/${item.replace(/\s/g, '')}`}>{item}</Link>
               </motion.li>
             );
           })}

@@ -6,8 +6,8 @@ const Provider = (props) => {
   const [votes, setVotes] = useState({});
   const [goofCount, setGoofCount] = useState(0);
   const [fryCount, setFryCount] = useState(0);
-  const [params, setParams] = useState(null);
-  const [data, setData] = useState(null);
+  const [params, setParams] = useState({});
+  const [data, setData] = useState({});
   const [hasVoted, setHasVoted] = useState(false);
 
   const store = {

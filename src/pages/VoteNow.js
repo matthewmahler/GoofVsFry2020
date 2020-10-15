@@ -138,7 +138,14 @@ const VoteNow = () => {
     }
   }, [votes]);
   useEffect(() => {
-    if (params && data && votes) {
+    function isEmptyObject(obj) {
+      return JSON.stringify(obj) === '{}';
+    }
+    if (
+      !isEmptyObject(params) &&
+      !isEmptyObject(data) &&
+      !isEmptyObject(votes)
+    ) {
       setLoading(false);
     }
   }, [params, data, votes]);

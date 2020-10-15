@@ -92,6 +92,9 @@ const VoteNow = () => {
     const json = await response.json();
     setData(json);
   }
+  function isEmptyObject(obj) {
+    return JSON.stringify(obj) === '{}';
+  }
   useEffect(() => {
     function getSearchParameters() {
       var prmstr = window.location.hash.substr(1);
@@ -126,21 +129,16 @@ const VoteNow = () => {
       });
   }, []);
   useEffect(() => {
-    if (votes) {
+    if (!isEmptyObject(votes)) {
       Object.values(votes).forEach((vote) => {
         if (vote.id === data.sub) {
           setHasVoted(true);
-          console.log(vote);
-          console.log(data);
           return;
         }
       });
     }
   }, [votes]);
   useEffect(() => {
-    function isEmptyObject(obj) {
-      return JSON.stringify(obj) === '{}';
-    }
     if (
       !isEmptyObject(params) &&
       !isEmptyObject(data) &&

@@ -89,7 +89,7 @@ const Landing = () => {
           </div>
         </div>
         <Link
-          to={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=http://localhost:8000/VoteNow&response_type=token+id_token&scope=openid`}
+          to={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`}
         >
           VOTE NOW
         </Link>

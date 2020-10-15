@@ -86,7 +86,7 @@ const Nav = () => {
     'About This Site',
   ];
 
-  const url = `https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=http://localhost:8000/VoteNow&response_type=token+id_token&scope=openid`;
+  const url = `https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`;
   return (
     <Container>
       <motion.nav

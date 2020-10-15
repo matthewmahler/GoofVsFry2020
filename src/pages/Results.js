@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 import firebase from 'gatsby-plugin-firebase';
 import { BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
+import { context } from '../Context/provider';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,11 +35,15 @@ const Container = styled.div`
 `;
 
 const Results = () => {
-  const [votes, setVotes] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [goofCount, setGoofCount] = useState(0);
-  const [fryCount, setFryCount] = useState(0);
-
+  const {
+    votes,
+    setVotes,
+    setGoofCount,
+    setFryCount,
+    goofCount,
+    fryCount,
+  } = useContext(context);
   const setCounts = async () => {
     let tempGoof = [];
     let tempFry = [];

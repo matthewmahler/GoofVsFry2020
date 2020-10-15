@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 import firebase from 'gatsby-plugin-firebase';
 import { Link } from 'gatsby';
+import { context } from '../Context/provider';
 
 const Container = styled.div`
   display: flex;
@@ -71,11 +72,17 @@ const Container = styled.div`
 `;
 
 const VoteNow = () => {
-  const [params, setParams] = useState({});
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [votes, setVotes] = useState(null);
-  const [hasVoted, setHasVoted] = useState(false);
+  const {
+    votes,
+    setParams,
+    params,
+    setVotes,
+    setHasVoted,
+    hasVoted,
+    data,
+    setData,
+  } = useContext(context);
 
   const url = `https://id.twitch.tv/oauth2/userinfo`;
   async function fetchUrl() {
@@ -105,7 +112,9 @@ const VoteNow = () => {
     setParams(getSearchParameters());
   }, []);
   useEffect(() => {
-    fetchUrl();
+    if (params !== null) {
+      fetchUrl();
+    }
   }, [params]);
   useEffect(() => {
     firebase
@@ -119,14 +128,21 @@ const VoteNow = () => {
   useEffect(() => {
     if (votes) {
       Object.values(votes).forEach((vote) => {
-        if (vote.id == data.sub) {
+        if (vote.id === data.sub) {
           setHasVoted(true);
+          console.log(vote);
+          console.log(data);
+          return;
         }
       });
     }
-
-    setLoading(false);
   }, [votes]);
+  useEffect(() => {
+    if (params && data && votes) {
+      setLoading(false);
+    }
+  }, [params, data, votes]);
+
   async function vote(db, id, twitchName, vote) {
     //check iff the user has voted already
     if (!hasVoted) {
@@ -141,34 +157,40 @@ const VoteNow = () => {
   return (
     <Layout>
       <Container>
-        <h1>
-          {loading ? 'Authorizing' : `Logged In As: ${data.preferred_username}`}
-        </h1>
-        {hasVoted && (
-          <div>
-            <h2>You Have Voted</h2>
-            <Link to="/Results">See Results</Link>
-          </div>
-        )}
-        {!hasVoted && (
-          <div className="vote">
-            <button
-              disabled={hasVoted}
-              onClick={() =>
-                vote(firebase, data.sub, data.preferred_username, 'Goof')
-              }
-            >
-              Vote Goof
-            </button>
-            <button
-              disabled={hasVoted}
-              onClick={() =>
-                vote(firebase, data.sub, data.preferred_username, 'Fry')
-              }
-            >
-              Vote Fry
-            </button>
-          </div>
+        {!loading && (
+          <>
+            <h1>
+              {data === null
+                ? 'Authorizing'
+                : `Logged In As: ${data.preferred_username}`}
+            </h1>
+            {hasVoted && (
+              <div>
+                <h2>You Have Voted</h2>
+                <Link to="/Results">See Results</Link>
+              </div>
+            )}
+            {!hasVoted && (
+              <div className="vote">
+                <button
+                  disabled={hasVoted}
+                  onClick={() =>
+                    vote(firebase, data.sub, data.preferred_username, 'Goof')
+                  }
+                >
+                  Vote Goof
+                </button>
+                <button
+                  disabled={hasVoted}
+                  onClick={() =>
+                    vote(firebase, data.sub, data.preferred_username, 'Fry')
+                  }
+                >
+                  Vote Fry
+                </button>
+              </div>
+            )}
+          </>
         )}
       </Container>
     </Layout>

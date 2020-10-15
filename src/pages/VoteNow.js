@@ -129,7 +129,7 @@ const VoteNow = () => {
       });
   }, []);
   useEffect(() => {
-    if (!isEmptyObject(votes)) {
+    if (!isEmptyObject(data) && !isEmptyObject(votes)) {
       Object.values(votes).forEach((vote) => {
         if (vote.id === data.sub) {
           setHasVoted(true);
@@ -137,7 +137,7 @@ const VoteNow = () => {
         }
       });
     }
-  }, [votes]);
+  }, [votes, data]);
   useEffect(() => {
     if (
       !isEmptyObject(params) &&

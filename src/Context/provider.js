@@ -3,7 +3,7 @@ import React, { useState, createContext } from 'react';
 export const context = createContext();
 
 const Provider = (props) => {
-  const [votes, setVotes] = useState(null);
+  const [votes, setVotes] = useState({});
   const [goofCount, setGoofCount] = useState(0);
   const [fryCount, setFryCount] = useState(0);
   const [params, setParams] = useState(null);

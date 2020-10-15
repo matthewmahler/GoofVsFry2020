@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 
-dotenv.config()
+dotenv.config();
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 module.exports = {
@@ -31,6 +31,20 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: ['Open Sans'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: 'AIzaSyA7OBd5J56752CbuZs80S3qHaoNz0Q45eM',
+          authDomain: 'goofvsfry2020.firebaseapp.com',
+          databaseURL: 'https://goofvsfry2020.firebaseio.com',
+          projectId: 'goofvsfry2020',
+          storageBucket: 'goofvsfry2020.appspot.com',
+          messagingSenderId: '270926913639',
+          appId: '1:270926913639:web:6286a3ae6b926dbe5b74c2',
+        },
       },
     },
   ],

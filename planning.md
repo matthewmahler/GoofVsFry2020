@@ -26,7 +26,7 @@
 
 ## Vote Interface
 
-- log in with twitch/discord
+- log in with twitch
   - radial select to vote
 
 # Preventing Voter Fraud

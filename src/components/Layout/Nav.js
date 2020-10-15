@@ -80,11 +80,13 @@ const Nav = () => {
     initial: { x: -20, opacity: 0 },
   };
   const navItems = [
-    'Vote Now',
     'The Candidates',
     'How To Vote',
+    'Results',
     'About This Site',
   ];
+
+  const url = `https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=http://localhost:8000/VoteNow&response_type=token+id_token&scope=openid`;
   return (
     <Container>
       <motion.nav
@@ -97,6 +99,9 @@ const Nav = () => {
           <Link to="/">Election 2020</Link>
         </motion.h1>
         <motion.ul variants={ulVariants}>
+          <motion.li variants={liVariants}>
+            <a href={url}>Vote Now</a>
+          </motion.li>
           {navItems.map((item, key) => {
             return (
               <motion.li variants={liVariants} key={key}>

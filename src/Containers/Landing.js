@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 const Container = styled.div`
   display: flex;
@@ -34,13 +34,20 @@ const Container = styled.div`
       }
     }
   }
-  button {
+  a {
     margin-top: 2rem;
+    border: 2px solid #eeeeee;
     border-radius: 1rem;
     background-color: #040404;
     font-size: 6rem;
     color: #eeeeee;
-    padding: 2rem;
+    padding: 4rem;
+    :hover {
+      border: 2px solid red;
+      color: red;
+      filter: drop-shadow(1.5);
+      cursor: pointer;
+    }
   }
 `;
 const Landing = () => {
@@ -81,7 +88,11 @@ const Landing = () => {
             />
           </div>
         </div>
-        <button>VOTE NOW</button>
+        <Link
+          to={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=http://localhost:8000/VoteNow&response_type=token+id_token&scope=openid`}
+        >
+          VOTE NOW
+        </Link>
       </Container>
     </BackgroundImage>
   );

@@ -68,15 +68,6 @@ const Results = () => {
     }
   }, [votes]);
 
-  firebase
-    .database()
-    .ref()
-    .once('value')
-    .then(async (snapshot) => {
-      await setVotes(snapshot.val());
-      setLoading(false);
-    });
-
   const data = [
     {
       name: 'Election Results 2020',

@@ -73,6 +73,7 @@ const Results = () => {
       name: 'Election Results 2020',
       GoofinAbout: goofCount,
       TheFryGuy: fryCount,
+      votes: goofCount > fryCount ? goofCount : fryCount,
     },
   ];
 
@@ -94,7 +95,7 @@ const Results = () => {
               }}
             >
               <XAxis dataKey="name" />
-              <YAxis dataKey="GoofinAbout" />
+              <YAxis dataKey="votes" />
               <Legend iconSize={30} />
               <Bar dataKey="GoofinAbout" fill="red" label />
               <Bar dataKey="TheFryGuy" fill="blue" label />

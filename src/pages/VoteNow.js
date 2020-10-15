@@ -119,7 +119,7 @@ const VoteNow = () => {
   useEffect(() => {
     if (votes) {
       Object.values(votes).forEach((vote) => {
-        if (vote.id === data.sub) {
+        if (vote.id == data.sub) {
           setHasVoted(true);
         }
       });

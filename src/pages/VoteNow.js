@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
+import BackgroundImage from 'gatsby-background-image';
+
 import styled from 'styled-components';
 import firebase from 'gatsby-plugin-firebase';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { context } from '../Context/provider';
 
 const Container = styled.div`
@@ -12,14 +14,7 @@ const Container = styled.div`
   justify-content: flex-start;
   min-height: 95vh;
   width: 100vw;
-  background-image: linear-gradient(
-    to bottom,
-    #040404,
-    #040404ee,
-    #04040400,
-    #040404ee,
-    #040404
-  );
+  background-image: linear-gradient(to bottom, #040404, #040404cc, #040404);
   background-size: cover;
   background-repeat: no-repeat;
   h1 {
@@ -38,8 +33,22 @@ const Container = styled.div`
     a {
       text-align: center;
       width: 100%;
+      font-size: 4rem;
+      color: red;
+      margin: 0 auto;
+    }
+    h3 {
+      text-align: center;
+      width: 100%;
       font-size: 3rem;
       color: red;
+      margin: 0 auto;
+    }
+    p {
+      text-align: center;
+      width: 100%;
+      font-size: 2.5rem;
+      color: #eee;
       margin: 0 auto;
     }
   }
@@ -72,7 +81,11 @@ const Container = styled.div`
 `;
 
 const VoteNow = () => {
+  const img = useStaticQuery(query);
+
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const {
     votes,
     setParams,
@@ -86,11 +99,20 @@ const VoteNow = () => {
 
   const url = `https://id.twitch.tv/oauth2/userinfo`;
   async function fetchUrl() {
-    const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${params.access_token}` },
-    });
-    const json = await response.json();
-    setData(json);
+    try {
+      const response = await fetch(url, {
+        headers: { Authorization: `Bearer ${params.access_token}` },
+      });
+      const json = await response.json();
+      if (response.ok) {
+        setData(json);
+        setError(null);
+      } else {
+        setError(json);
+      }
+    } catch (e) {
+      setError(e);
+    }
   }
   function isEmptyObject(obj) {
     return JSON.stringify(obj) === '{}';
@@ -161,45 +183,79 @@ const VoteNow = () => {
   }
   return (
     <Layout>
-      <Container>
-        {!loading && (
-          <>
-            <h1>
-              {data === null
-                ? 'Authorizing'
-                : `Logged In As: ${data.preferred_username}`}
-            </h1>
-            {hasVoted && (
-              <div>
-                <h2>You Have Voted</h2>
-                <Link to="/Results">See Results</Link>
-              </div>
-            )}
-            {!hasVoted && (
-              <div className="vote">
-                <button
-                  disabled={hasVoted}
-                  onClick={() =>
-                    vote(firebase, data.sub, data.preferred_username, 'Goof')
-                  }
-                >
-                  Vote Goof
-                </button>
-                <button
-                  disabled={hasVoted}
-                  onClick={() =>
-                    vote(firebase, data.sub, data.preferred_username, 'Fry')
-                  }
-                >
-                  Vote Fry
-                </button>
-              </div>
-            )}
-          </>
-        )}
-      </Container>
+      <BackgroundImage
+        Tag="div"
+        fluid={img.backgroundImage.childImageSharp.fluid}
+        fadeIn
+        backgroundColor={`#292929`}
+        style={{ width: '100%' }}
+      >
+        <Container>
+          {!loading && (
+            <>
+              <h1>
+                {data === null
+                  ? 'Authorizing'
+                  : `Logged In As: ${data.preferred_username}`}
+              </h1>
+              {hasVoted && (
+                <div>
+                  <h2>You Have Voted</h2>
+                  <Link to="/Results">See Results</Link>
+                </div>
+              )}
+              {!hasVoted && (
+                <div className="vote">
+                  <button
+                    disabled={hasVoted}
+                    onClick={() =>
+                      vote(firebase, data.sub, data.preferred_username, 'Goof')
+                    }
+                  >
+                    Vote Goof
+                  </button>
+                  <button
+                    disabled={hasVoted}
+                    onClick={() =>
+                      vote(firebase, data.sub, data.preferred_username, 'Fry')
+                    }
+                  >
+                    Vote Fry
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+          {error && (
+            <div>
+              <h2>Something Went Wrong</h2>
+              <h3>Error Message: "{error.message}"</h3>
+              <p>
+                Please message @EmoMatt#4019 on Discord and tell him he fucked
+                something up :)
+              </p>
+            </div>
+          )}
+        </Container>
+      </BackgroundImage>
     </Layout>
   );
 };
 
 export default VoteNow;
+
+const query = graphql`
+  query VoteQuery {
+    backgroundImage: file(relativePath: { eq: "vote.jpg" }) {
+      childImageSharp {
+        fluid {
+          tracedSVG
+          srcWebp
+          srcSetWebp
+          srcSet
+          src
+        }
+      }
+    }
+  }
+`;

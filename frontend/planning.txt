@@ -1,0 +1,24 @@
+Goof goes live
+webhook fires
+server listening picks up the webhook (username, currentDate)
+server requests a viewer list every (x) minutes
+server querys DB for that currentDate's viewer list
+server filter the new viewer list based on the DB version
+saves new version to the DB for currentDate
+
+On Site:
+Vote Now
+query currentDate's votes
+check if they watched that day
+check for an existing vote
+
+Results Page
+query all days votes and compile
+
+data structure
+
+Votes
+username, id, date, voteChoice
+
+Viewers table
+date, username, id

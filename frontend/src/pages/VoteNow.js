@@ -155,6 +155,7 @@ const VoteNow = () => {
       Object.values(votes).forEach((vote) => {
         if (vote.id === data.sub) {
           setHasVoted(true);
+          setError(null);
           return;
         }
       });

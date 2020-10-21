@@ -1,7 +1,7 @@
-From node:12
+FROM node:12
 
 # Create app directory
-WORK DIR /usr/backend
+WORKDIR /usr/backend
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json and package-lock.json are copied

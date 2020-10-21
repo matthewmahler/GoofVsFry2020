@@ -8,12 +8,33 @@ saves new version to the DB for currentDate
 
 On Site:
 Vote Now
-query currentDate's votes
-check if they watched that day
-check for an existing vote
+ask twitch for the user info
+use the twitch id to query the DB for that viewers record
+if there is no record, make one
+
+if
+  lastWatchDate === lastVoteDate
+  NO Vote
+
+if
+  lastWatchDate !== lastVoteDate && lastWatchDate === today
+  VOTE
+
+if
+  lastVoteDate === null
+  VOTE
+
+if
+  lastWatchDate === !today && lastVoteDate === !null
+  NO VOTE
+
+VOTING
+    post req to /api/votes/
+        username, id, candidate, voteDate
+    
 
 Results Page
-query all days votes and compile
+query all votes 
 
 data structure
 

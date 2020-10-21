@@ -3,8 +3,7 @@ import Layout from '../components/Layout';
 import BackgroundImage from 'gatsby-background-image';
 
 import styled from 'styled-components';
-import firebase from 'gatsby-plugin-firebase';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { context } from '../Context/provider';
 
 const Container = styled.div`
@@ -82,20 +81,9 @@ const Container = styled.div`
 
 const VoteNow = () => {
   const img = useStaticQuery(query);
-
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const {
-    votes,
-    setParams,
-    params,
-    setVotes,
-    setHasVoted,
-    hasVoted,
-    data,
-    setData,
-  } = useContext(context);
+  const { setParams, params, hasVoted, data, setData } = useContext(context);
 
   const url = `https://id.twitch.tv/oauth2/userinfo`;
   async function fetchUrl() {
@@ -141,46 +129,25 @@ const VoteNow = () => {
       fetchUrl();
     }
   }, [params]);
-  useEffect(() => {
-    firebase
-      .database()
-      .ref()
-      .once('value')
-      .then(async (snapshot) => {
-        await setVotes(snapshot.val());
-      });
-  }, []);
-  useEffect(() => {
-    if (!isEmptyObject(data) && !isEmptyObject(votes)) {
-      Object.values(votes).forEach((vote) => {
-        if (vote.id === data.sub) {
-          setHasVoted(true);
-          setError(null);
-          return;
-        }
-      });
-    }
-  }, [votes, data]);
-  useEffect(() => {
-    if (
-      !isEmptyObject(params) &&
-      !isEmptyObject(data) &&
-      !isEmptyObject(votes)
-    ) {
-      setLoading(false);
-    }
-  }, [params, data, votes]);
 
-  async function vote(db, id, twitchName, vote) {
-    //check iff the user has voted already
-    if (!hasVoted) {
-      await db.database().ref().push({
-        id,
-        twitchName,
-        vote,
-      });
-      setHasVoted(true);
-    }
+  async function vote(userId, username, candidate) {
+    const post = 'http://localhost:5000/api/votes';
+    const data = {
+      userId,
+      username,
+      voteDate: new Date().toISOString(),
+      candidate,
+      voteId: Math.floor(Math.random() * 100000),
+    };
+    const response = await fetch(post, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const json = await response.json();
+    console.log(await json);
   }
   return (
     <Layout>
@@ -192,41 +159,21 @@ const VoteNow = () => {
         style={{ width: '100%' }}
       >
         <Container>
-          {!loading && (
-            <>
-              <h1>
-                {data === null
-                  ? 'Authorizing'
-                  : `Logged In As: ${data.preferred_username}`}
-              </h1>
-              {hasVoted && (
-                <div>
-                  <h2>You Have Voted</h2>
-                  <Link to="/Results">See Results</Link>
-                </div>
-              )}
-              {!hasVoted && (
-                <div className="vote">
-                  <button
-                    disabled={hasVoted}
-                    onClick={() =>
-                      vote(firebase, data.sub, data.preferred_username, 'Goof')
-                    }
-                  >
-                    Vote Goof
-                  </button>
-                  <button
-                    disabled={hasVoted}
-                    onClick={() =>
-                      vote(firebase, data.sub, data.preferred_username, 'Fry')
-                    }
-                  >
-                    Vote Fry
-                  </button>
-                </div>
-              )}
-            </>
-          )}
+          <div className="vote">
+            <button
+              disabled={hasVoted}
+              onClick={() => vote(data.sub, data.preferred_username, 'Goof')}
+            >
+              Vote Goof
+            </button>
+            <button
+              disabled={hasVoted}
+              onClick={() => vote(data.sub, data.preferred_username, 'Fry')}
+            >
+              Vote Fry
+            </button>
+          </div>
+
           {error && (
             <div>
               <h2>Something Went Wrong</h2>

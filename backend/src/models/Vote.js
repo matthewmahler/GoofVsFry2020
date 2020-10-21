@@ -1,13 +1,16 @@
 const Sequelize = require("sequelize");
 
 module.exports = sequelize.define("Vote", {
-  id: {
+  userId: {
     type: Sequelize.INTEGER(100),
     allowNull: false,
-    autoIncrement: true,
+  },
+  voteId: {
+    type: Sequelize.INTEGER(100),
+    allowNull: false,
     primaryKey: true,
   },
-  username: Sequelize.STRING(100),
-  voteDate: Sequelize.DATE(),
-  candidate: Sequelize.STRING(45),
+  username: { type: Sequelize.STRING(100), allowNull: false },
+  voteDate: { type: Sequelize.DATE(), allowNull: false },
+  candidate: { type: Sequelize.STRING(45), allowNull: false },
 });

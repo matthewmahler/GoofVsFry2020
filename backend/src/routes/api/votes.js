@@ -5,23 +5,36 @@ const Vote = require("../../models/Vote");
 // Get all votes
 router.get("/", async (req, res) => {
   const votes = await Vote.findAll({
-    attributes: ["id", "userusername", "voteDate", "candidate"],
+    attributes: ["userId", "username", "voteDate", "candidate", "voteId"],
   }).catch(errHandler);
   res.json(votes);
 });
 
+// Get all vote from user
+router.get("/:userId", async (req, res) => {
+  const viewer = await Vote.findAll({
+    where: {
+      userId: req.params.userId,
+    },
+  }).catch(errHandler);
+
+  if (viewer && Viewer.length > 0) {
+    res.json(viewer);
+  } else {
+    res.status(400).json({ msg: "viewer not found" });
+  }
+});
+
 // Create vote
 router.post("/", async (req, res) => {
+  console.log(req.body);
   const newVote = {
     username: req.body.username,
-    id: req.body.id,
-    voteDate: new Date().toISOString(),
+    userId: req.body.userId,
+    voteId: req.body.voteId,
+    voteDate: req.body.voteDate,
     candidate: req.body.candidate,
   };
-
-  if (!newVote.username || !newVote.email) {
-    return res.status(400).json({ msg: "Please include a username and email" });
-  }
 
   const vote = await Vote.create(newVote).catch(errHandler);
 

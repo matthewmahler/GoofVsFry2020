@@ -20,6 +20,7 @@ require("./src/database/connection");
 // Routes
 app.use("/api/viewers", require("./src/routes/api/viewers"));
 app.use("/api/votes", require("./src/routes/api/votes"));
+app.use("/api/live", require("./src/routes/api/live"));
 
 // App config
 const PORT = process.env.PORT || 5000;

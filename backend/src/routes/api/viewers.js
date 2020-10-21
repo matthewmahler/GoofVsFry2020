@@ -5,16 +5,16 @@ const Viewer = require("../../models/Viewer");
 // Get all viewers
 router.get("/", async (req, res) => {
   const viewers = await Viewer.findAll({
-    attributes: ["id", "username", "lastVoteDate", "lastWatchDate"],
+    attributes: ["userId", "username", "lastVoteDate", "lastWatchDate"],
   }).catch(errHandler);
   res.json(viewers);
 });
 
 // Get single viewer
-router.get("/:id", async (req, res) => {
+router.get("/:userId", async (req, res) => {
   const viewer = await Viewer.findAll({
     where: {
-      id: req.params.id,
+      userId: req.params.userId,
     },
   }).catch(errHandler);
 
@@ -28,12 +28,14 @@ router.get("/:id", async (req, res) => {
 // Create viewer
 router.post("/", async (req, res) => {
   const newViewer = {
-    name: req.body.name,
-    email: req.body.email,
+    username: req.body.username,
+    userId: req.body.userId,
+    lastVoteDate: req.body.lastVoteDate,
+    lastWatchDate: req.body.lastWatchDate,
   };
 
-  if (!newViewer.name || !newViewer.email) {
-    return res.status(400).json({ msg: "Please include a name and email" });
+  if (!newViewer.name || !newViewer.userId) {
+    return res.status(400).json({ msg: "Idk i fucked up" });
   }
 
   const viewer = await Viewer.create(newViewer).catch(errHandler);
@@ -46,10 +48,10 @@ router.post("/", async (req, res) => {
 });
 
 // Update viewer
-router.put("/:id", async (req, res) => {
+router.put("/:userId", async (req, res) => {
   const viewer = await Viewer.findAll({
     where: {
-      id: req.params.id,
+      userId: req.params.userId,
     },
   }).catch(errHandler);
 
@@ -57,12 +59,16 @@ router.put("/:id", async (req, res) => {
     const updViewer = req.body;
     const result = await Viewer.update(
       {
-        name: updViewer.name ? updViewer.name : viewer[0].name,
-        email: updViewer.email ? updViewer.email : viewer[0].email,
+        lastVoteDate: updViewer.lastVoteDate
+          ? updViewer.lastVoteDate
+          : viewer[0].lastVoteDate,
+        lastWatchDate: updViewer.lastWatchDate
+          ? updViewer.lastWatchDate
+          : viewer[0].lastWatchDate,
       },
       {
         where: {
-          id: req.params.id,
+          userId: req.params.userId,
         },
       }
     ).catch(errHandler);
@@ -73,56 +79,9 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// Delete Member
-router.delete("/:id", async (req, res) => {
-  const viewer = await Viewer.findAll({
-    where: {
-      id: req.params.id,
-    },
-  }).catch(errHandler);
-
-  if (viewer && Viewer.length > 0) {
-    const viewer = Viewer.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-
-    res.json({
-      msg: "Member deleted",
-      viewer,
-    });
-  } else {
-    res.status(400).json({ msg: "viewer not found" });
-  }
-});
-
-// Get all viewers with pagination
-router.get("/:page/:pageSize", async (req, res) => {
-  const page = parseInt(req.params.page);
-  const pageSize = parseInt(req.params.pageSize);
-
-  const viewers = await Viewer.findAll({
-    attributes: ["id", "name", "email"],
-    ...paginate({ page, pageSize }),
-  }).catch(errHandler);
-
-  res.json(viewers);
-});
-
 // Helpers
 const errHandler = (err) => {
   console.log("Error: ", err);
-};
-
-const paginate = ({ page, pageSize }) => {
-  const offset = page * pageSize;
-  const limit = pageSize;
-
-  return {
-    offset,
-    limit,
-  };
 };
 
 module.exports = router;

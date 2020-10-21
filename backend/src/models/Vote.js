@@ -11,6 +11,6 @@ module.exports = sequelize.define("Vote", {
     primaryKey: true,
   },
   username: { type: Sequelize.STRING(100), allowNull: false },
-  voteDate: { type: Sequelize.DATE(), allowNull: false },
+  voteDate: { type: Sequelize.DATE, allowNull: false },
   candidate: { type: Sequelize.STRING(45), allowNull: false },
 });

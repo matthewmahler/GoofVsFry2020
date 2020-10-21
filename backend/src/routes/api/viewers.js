@@ -5,21 +5,20 @@ const Viewer = require("../../models/Viewer");
 // Get all viewers
 router.get("/", async (req, res) => {
   const viewers = await Viewer.findAll({
-    attributes: ["userId", "username", "lastVoteDate", "lastWatchDate"],
+    attributes: ["username", "lastVoteDate", "lastWatchDate", "canVote"],
   }).catch(errHandler);
   res.json(viewers);
 });
 
 // Get single viewer
-router.get("/:userId", async (req, res) => {
-  const viewer = await Viewer.findAll({
+router.get("/:username", async (req, res) => {
+  const viewer = await Viewer.findOne({
     where: {
-      userId: req.params.userId,
+      username: req.params.username,
     },
   }).catch(errHandler);
-
-  if (viewer && Viewer.length > 0) {
-    res.json(viewer);
+  if (viewer) {
+    res.status(200).json(viewer);
   } else {
     res.status(400).json({ msg: "viewer not found" });
   }
@@ -29,12 +28,12 @@ router.get("/:userId", async (req, res) => {
 router.post("/", async (req, res) => {
   const newViewer = {
     username: req.body.username,
-    userId: req.body.userId,
     lastVoteDate: req.body.lastVoteDate,
     lastWatchDate: req.body.lastWatchDate,
+    canVote: req.body.canVote,
   };
 
-  if (!newViewer.name || !newViewer.userId) {
+  if (!newViewer.username) {
     return res.status(400).json({ msg: "Idk i fucked up" });
   }
 
@@ -48,32 +47,26 @@ router.post("/", async (req, res) => {
 });
 
 // Update viewer
-router.put("/:userId", async (req, res) => {
-  const viewer = await Viewer.findAll({
+router.put("/:username", async (req, res) => {
+  const viewer = await Viewer.findOne({
     where: {
-      userId: req.params.userId,
+      username: req.params.username,
     },
   }).catch(errHandler);
 
-  if (viewer && Viewer.length > 0) {
+  if (viewer) {
     const updViewer = req.body;
-    const result = await Viewer.update(
-      {
-        lastVoteDate: updViewer.lastVoteDate
-          ? updViewer.lastVoteDate
-          : viewer[0].lastVoteDate,
-        lastWatchDate: updViewer.lastWatchDate
-          ? updViewer.lastWatchDate
-          : viewer[0].lastWatchDate,
-      },
-      {
-        where: {
-          userId: req.params.userId,
-        },
-      }
-    ).catch(errHandler);
+    viewer.lastVoteDate = updViewer.lastVoteDate
+      ? updViewer.lastVoteDate
+      : viewer.lastVoteDate;
+    viewer.lastWatchDate = updViewer.lastWatchDate
+      ? updViewer.lastWatchDate
+      : viewer.lastWatchDate;
+    viewer.canVote = updViewer.canVote ? updViewer.canVote : viewer.canVote;
 
-    res.json({ msg: "viewer updated", updViewer });
+    const result = await viewer.save().catch(errHandler);
+
+    res.json({ msg: "viewer updated", updViewer, result });
   } else {
     res.status(400).json({ msg: "viewer not found" });
   }

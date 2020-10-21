@@ -82,29 +82,28 @@ const Container = styled.div`
 const VoteNow = () => {
   const img = useStaticQuery(query);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const { setParams, params, hasVoted, data, setData } = useContext(context);
+  const {
+    setParams,
+    params,
+    hasVoted,
+    setUser,
+    user,
+    viewer,
+    setVotes,
+    votes,
+    setViewer,
+    setHasVoted,
+  } = useContext(context);
 
-  const url = `https://id.twitch.tv/oauth2/userinfo`;
-  async function fetchUrl() {
-    try {
-      const response = await fetch(url, {
-        headers: { Authorization: `Bearer ${params.access_token}` },
-      });
-      const json = await response.json();
-      if (response.ok) {
-        setData(json);
-        setError(null);
-      } else {
-        setError(json);
-      }
-    } catch (e) {
-      setError(e);
-    }
+  async function fetchUrl(url, options, set) {
+    const response = await fetch(url, options);
+    const json = await response.json();
+
+    set(json);
   }
-  function isEmptyObject(obj) {
-    return JSON.stringify(obj) === '{}';
-  }
+
   useEffect(() => {
     function getSearchParameters() {
       var prmstr = window.location.hash.substr(1);
@@ -126,28 +125,68 @@ const VoteNow = () => {
   }, []);
   useEffect(() => {
     if (params !== null) {
-      fetchUrl();
+      const userURL = `https://id.twitch.tv/oauth2/userinfo`;
+      const options = {
+        headers: { Authorization: `Bearer ${params.access_token}` },
+      };
+
+      fetchUrl(userURL, options, setUser);
     }
   }, [params]);
 
+  useEffect(() => {
+    if (user !== null) {
+      const viewerURL = `http://localhost:5000/api/viewers/${user.preferred_username}`;
+      fetchUrl(viewerURL, null, setViewer);
+      const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
+      fetchUrl(votesURL, null, setVotes);
+    }
+  }, [user]);
+  useEffect(() => {
+    if ((params, user, viewer)) {
+      setLoading(false);
+    }
+    if (!viewer.canVote) {
+      setError(`User: ${viewer.username} cannot vote at this time`);
+    }
+  }, [params, user, viewer]);
   async function vote(userId, username, candidate) {
-    const post = 'http://localhost:5000/api/votes';
-    const data = {
-      userId,
-      username,
-      voteDate: new Date().toISOString(),
-      candidate,
-      voteId: Math.floor(Math.random() * 100000),
-    };
-    const response = await fetch(post, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const json = await response.json();
-    console.log(await json);
+    if (viewer.canVote) {
+      const vote = 'http://localhost:5000/api/votes';
+      const updateViewer = `http://localhost:5000/api/viewers/${user.preferred_username.toLowerCase()}`;
+      const data = {
+        userId,
+        username,
+        voteDate: new Date().toISOString(),
+        candidate,
+        voteId: Math.floor(Math.random() * 100000),
+      };
+      const viewerData = {
+        lastVoteDate: new Date().toISOString(),
+        canVote: 'false',
+      };
+      const voteResponse = await fetch(vote, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const viewerResponse = await fetch(updateViewer, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(viewerData),
+      });
+      const json = await voteResponse.json();
+      const json2 = await viewerResponse.json();
+      setHasVoted(true);
+      console.log(await json);
+      console.log(await json2);
+    } else {
+      setError('You have voted already');
+    }
   }
   return (
     <Layout>
@@ -159,30 +198,34 @@ const VoteNow = () => {
         style={{ width: '100%' }}
       >
         <Container>
-          <div className="vote">
-            <button
-              disabled={hasVoted}
-              onClick={() => vote(data.sub, data.preferred_username, 'Goof')}
-            >
-              Vote Goof
-            </button>
-            <button
-              disabled={hasVoted}
-              onClick={() => vote(data.sub, data.preferred_username, 'Fry')}
-            >
-              Vote Fry
-            </button>
-          </div>
-
-          {error && (
-            <div>
-              <h2>Something Went Wrong</h2>
-              <h3>Error Message: "{error.message}"</h3>
-              <p>
-                Please message @EmoMatt#4019 on Discord and tell him he fucked
-                something up :)
-              </p>
-            </div>
+          {!loading && (
+            <>
+              <div className="vote">
+                <button
+                  disabled={!viewer.canVote}
+                  onClick={() =>
+                    vote(user.sub, user.preferred_username, 'Goof')
+                  }
+                >
+                  Vote Goof
+                </button>
+                <button
+                  disabled={!viewer.canVote}
+                  onClick={() => vote(user.sub, user.preferred_username, 'Fry')}
+                >
+                  Vote Fry
+                </button>
+              </div>
+              {error && (
+                <div>
+                  <h2>{error}</h2>
+                  <p>
+                    Please message @EmoMatt#4019 on Discord if you think this is
+                    a mistake
+                  </p>
+                </div>
+              )}
+            </>
           )}
         </Container>
       </BackgroundImage>

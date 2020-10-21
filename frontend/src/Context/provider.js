@@ -3,19 +3,22 @@ import React, { useState, createContext } from 'react';
 export const context = createContext();
 
 const Provider = (props) => {
-  const [votes, setVotes] = useState({});
+  const [allVotes, setAllVotes] = useState({});
   const [goofCount, setGoofCount] = useState(0);
   const [fryCount, setFryCount] = useState(0);
-  const [params, setParams] = useState({});
-  const [data, setData] = useState({});
+  const [params, setParams] = useState(null);
+  const [user, setUser] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
-
+  const [viewer, setViewer] = useState(null);
+  const [votes, setVotes] = useState(null);
   const store = {
     votes,
+    allVotes,
+    viewer,
     goofCount,
     fryCount,
     params,
-    data,
+    user,
     hasVoted,
     setVotes: (d) => {
       setVotes(d);
@@ -29,11 +32,17 @@ const Provider = (props) => {
     setParams: (d) => {
       setParams(d);
     },
-    setData: (d) => {
-      setData(d);
+    setUser: (d) => {
+      setUser(d);
     },
     setHasVoted: (d) => {
       setHasVoted(d);
+    },
+    setAllVotes: (d) => {
+      setAllVotes(d);
+    },
+    setViewer: (d) => {
+      setViewer(d);
     },
   };
   return <context.Provider value={store}>{props.children}</context.Provider>;

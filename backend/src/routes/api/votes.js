@@ -12,22 +12,21 @@ router.get("/", async (req, res) => {
 
 // Get all vote from user
 router.get("/:userId", async (req, res) => {
-  const viewer = await Vote.findAll({
+  const votes = await Vote.findAll({
     where: {
       userId: req.params.userId,
     },
   }).catch(errHandler);
 
-  if (viewer && Viewer.length > 0) {
-    res.json(viewer);
+  if (votes) {
+    res.json(votes);
   } else {
-    res.status(400).json({ msg: "viewer not found" });
+    res.status(400).json({ msg: "votes not found" });
   }
 });
 
 // Create vote
 router.post("/", async (req, res) => {
-  console.log(req.body);
   const newVote = {
     username: req.body.username,
     userId: req.body.userId,

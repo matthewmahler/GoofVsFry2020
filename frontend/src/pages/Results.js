@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import firebase from 'gatsby-plugin-firebase';
 import { BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
 import { context } from '../Context/provider';
 const Container = styled.div`
@@ -48,28 +47,30 @@ const Results = () => {
     let tempGoof = [];
     let tempFry = [];
     await Object.values(votes).forEach((vote) => {
-      if (vote.vote === 'Goof') {
+      if (vote.candidate === 'Goof') {
         tempGoof.push(vote);
-      } else if (vote.vote === 'Fry') {
+      } else if (vote.candidate === 'Fry') {
         tempFry.push(vote);
       }
     });
     setGoofCount(tempGoof.length);
     setFryCount(tempFry.length);
   };
+  async function fetchUrl(url, options, set) {
+    const response = await fetch(url, options);
+    const json = await response.json();
+
+    set(json);
+  }
+
   useEffect(() => {
-    firebase
-      .database()
-      .ref()
-      .once('value')
-      .then(async (snapshot) => {
-        await setVotes(snapshot.val());
-        setLoading(false);
-      });
+    const url = 'http://localhost:5000/api/votes';
+    fetchUrl(url, null, setVotes);
   }, []);
   useEffect(() => {
     if (votes) {
       setCounts();
+      setLoading(false);
     }
   }, [votes]);
 

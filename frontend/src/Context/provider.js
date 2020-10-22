@@ -8,7 +8,7 @@ const Provider = (props) => {
   const [fryCount, setFryCount] = useState(0);
   const [params, setParams] = useState(null);
   const [user, setUser] = useState(null);
-  const [hasVoted, setHasVoted] = useState(false);
+  const [canVote, setCanVote] = useState(true);
   const [viewer, setViewer] = useState(null);
   const [votes, setVotes] = useState(null);
   const store = {
@@ -19,7 +19,7 @@ const Provider = (props) => {
     fryCount,
     params,
     user,
-    hasVoted,
+    canVote,
     setVotes: (d) => {
       setVotes(d);
     },
@@ -35,8 +35,8 @@ const Provider = (props) => {
     setUser: (d) => {
       setUser(d);
     },
-    setHasVoted: (d) => {
-      setHasVoted(d);
+    setCanVote: (d) => {
+      setCanVote(d);
     },
     setAllVotes: (d) => {
       setAllVotes(d);

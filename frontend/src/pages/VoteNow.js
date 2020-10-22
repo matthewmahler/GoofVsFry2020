@@ -23,6 +23,13 @@ const Container = styled.div`
     color: #eeeeee;
     margin: 0 auto;
   }
+  h3 {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    color: red;
+    margin: 0 auto;
+  }
   div {
     display: flex;
     flex-direction: column;
@@ -87,14 +94,14 @@ const VoteNow = () => {
   const {
     setParams,
     params,
-    hasVoted,
+    canVote,
     setUser,
     user,
+    votes,
     viewer,
     setVotes,
-    votes,
     setViewer,
-    setHasVoted,
+    setCanVote,
   } = useContext(context);
 
   async function fetchUrl(url, options, set) {
@@ -138,20 +145,37 @@ const VoteNow = () => {
     if (user !== null) {
       const viewerURL = `http://localhost:5000/api/viewers/${user.preferred_username}`;
       fetchUrl(viewerURL, null, setViewer);
-      const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
-      fetchUrl(votesURL, null, setVotes);
     }
   }, [user]);
   useEffect(() => {
-    if ((params, user, viewer)) {
+    const today = new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      new Date().getDate()
+    );
+
+    if (params && user && viewer) {
       setLoading(false);
-    }
-    if (!viewer.canVote) {
-      setError(`User: ${viewer.username} cannot vote at this time`);
+
+      const lastVoteDate = new Date(
+        new Date(viewer.lastVoteDate).getFullYear(),
+        new Date(viewer.lastVoteDate).getMonth(),
+        new Date(viewer.lastVoteDate).getDate()
+      );
+      if (today.getTime() === lastVoteDate.getTime()) {
+        setCanVote(false);
+        setError(`User: ${viewer.username} cannot vote at this time`);
+        const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
+        fetchUrl(votesURL, null, setVotes);
+      } else if (lastVoteDate === null) {
+        setCanVote(true);
+      } else {
+        setCanVote(true);
+      }
     }
   }, [params, user, viewer]);
   async function vote(userId, username, candidate) {
-    if (viewer.canVote) {
+    if (canVote) {
       const vote = 'http://localhost:5000/api/votes';
       const updateViewer = `http://localhost:5000/api/viewers/${user.preferred_username.toLowerCase()}`;
       const data = {
@@ -181,11 +205,11 @@ const VoteNow = () => {
       });
       const json = await voteResponse.json();
       const json2 = await viewerResponse.json();
-      setHasVoted(true);
+      setCanVote(false);
+      const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
+      fetchUrl(votesURL, null, setVotes);
       console.log(await json);
       console.log(await json2);
-    } else {
-      setError('You have voted already');
     }
   }
   return (
@@ -200,9 +224,11 @@ const VoteNow = () => {
         <Container>
           {!loading && (
             <>
+              {votes && <h3>You have voted {votes.length} times so far!</h3>}
+
               <div className="vote">
                 <button
-                  disabled={!viewer.canVote}
+                  disabled={!canVote}
                   onClick={() =>
                     vote(user.sub, user.preferred_username, 'Goof')
                   }
@@ -210,18 +236,19 @@ const VoteNow = () => {
                   Vote Goof
                 </button>
                 <button
-                  disabled={!viewer.canVote}
+                  disabled={!canVote}
                   onClick={() => vote(user.sub, user.preferred_username, 'Fry')}
                 >
                   Vote Fry
                 </button>
               </div>
-              {error && (
+              {!canVote && (
                 <div>
                   <h2>{error}</h2>
+
                   <p>
-                    Please message @EmoMatt#4019 on Discord if you think this is
-                    a mistake
+                    Please message @EmoMatt#4019 on Discord in the #bugs channel
+                    if you think this is a mistake
                   </p>
                 </div>
               )}

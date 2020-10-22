@@ -5,7 +5,7 @@ const Viewer = require("../../models/Viewer");
 // Get all viewers
 router.get("/", async (req, res) => {
   const viewers = await Viewer.findAll({
-    attributes: ["username", "lastVoteDate", "lastWatchDate", "canVote"],
+    attributes: ["username", "lastVoteDate", "lastWatchDate"],
   }).catch(errHandler);
   res.json(viewers);
 });

@@ -21,6 +21,7 @@ require("./src/database/connection");
 app.use("/api/viewers", require("./src/routes/api/viewers"));
 app.use("/api/votes", require("./src/routes/api/votes"));
 app.use("/api/live", require("./src/routes/api/live"));
+app.use("/api/fake", require("./src/routes/api/fake"));
 
 // App config
 const PORT = process.env.PORT || 5000;

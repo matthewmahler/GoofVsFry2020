@@ -1,7 +1,21 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import { BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Legend,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Tooltip,
+  Cell,
+  Line,
+  CartesianGrid,
+  LineChart,
+} from 'recharts';
 import { context } from '../Context/provider';
 const Container = styled.div`
   display: flex;
@@ -11,6 +25,7 @@ const Container = styled.div`
   min-height: 95vh;
   width: 100vw;
   background-color: #040404;
+  color: #eee;
   h1,
   h2 {
     text-align: center;
@@ -19,22 +34,38 @@ const Container = styled.div`
     color: #eeeeee;
     margin: 0 auto;
   }
-  div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  .legend {
+    min-width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .goof {
+      color: #ff5a50;
+    }
+    .fry {
+      color: #5768ff;
+    }
+  }
+  .charts {
+    box-sizing: border-box;
+    padding: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: flex-start;
-    color: #eeeeee;
+    min-height: 95vh;
+    width: 100vw;
     text,
     li {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 `;
 
 const Results = () => {
   const [loading, setLoading] = useState(true);
+  const [lineChartData, setLineChartData] = useState(null);
+  const [pieChartData, setPieChartData] = useState(null);
+
   const {
     votes,
     setVotes,
@@ -53,9 +84,11 @@ const Results = () => {
         tempFry.push(vote);
       }
     });
-    setGoofCount(tempGoof.length);
-    setFryCount(tempFry.length);
+
+    setGoofCount(tempGoof);
+    setFryCount(tempFry);
   };
+
   async function fetchUrl(url, options, set) {
     const response = await fetch(url, options);
     const json = await response.json();
@@ -69,43 +102,152 @@ const Results = () => {
   }, []);
   useEffect(() => {
     if (votes) {
+      compilePieChartData();
       setCounts();
-      setLoading(false);
+      compileLineChartData();
     }
   }, [votes]);
 
   const data = [
     {
-      name: 'Election Results 2020',
-      GoofinAbout: goofCount,
-      TheFryGuy: fryCount,
-      votes: goofCount > fryCount ? goofCount : fryCount,
+      GoofinAbout: goofCount.length,
+      TheFryGuy: fryCount.length,
+      votes: Math.ceil((goofCount.length + fryCount.length) / 100) * 50,
     },
   ];
 
+  useEffect(() => {
+    if (votes && goofCount && fryCount) {
+      compilePieChartData();
+    }
+  }, [votes, goofCount, fryCount]);
+  // loop through all vote and get unique dates
+  // for each unique date set the count for each candidate
+  // concat them all together
+
+  const compilePieChartData = async () => {
+    setPieChartData([
+      {
+        name: 'GoofinAbout',
+        value: Math.round((goofCount.length / votes.length) * 100),
+      },
+      {
+        name: 'TheFryGuy',
+        value: Math.round((fryCount.length / votes.length) * 100),
+      },
+    ]);
+    setLoading(false);
+  };
+
+  const compileLineChartData = async () => {
+    let tempArr = [];
+    let tempGoof = [];
+    let tempFry = [];
+
+    votes
+      .map((vote) =>
+        new Date(
+          new Date(vote.voteDate).getFullYear(),
+          new Date(vote.voteDate).getMonth(),
+          new Date(vote.voteDate).getDate()
+        ).toISOString()
+      )
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .sort()
+      .forEach((e) => {
+        const date = new Date(
+          new Date(e).getFullYear(),
+          new Date(e).getMonth(),
+          new Date(e).getDate()
+        );
+
+        votes.forEach((vote) => {
+          const voteDate = new Date(
+            new Date(vote.voteDate).getFullYear(),
+            new Date(vote.voteDate).getMonth(),
+            new Date(vote.voteDate).getDate()
+          );
+
+          if (date.getTime() === voteDate.getTime()) {
+            if (vote.candidate === 'Goof') {
+              tempGoof++;
+            } else if (vote.candidate === 'Fry') {
+              tempFry++;
+            } else {
+              return;
+            }
+          }
+        });
+        tempArr.push({
+          date: date.toISOString(),
+          GoofinAbout: tempGoof,
+          TheFryGuy: tempFry,
+        });
+      });
+    setLineChartData(tempArr);
+  };
+
+  const colors = ['#FF5A50', '#5768FF'];
   return (
     <Layout>
       <Container>
         <h1>Results</h1>
+        <div className="legend">
+          <h2 className="goof">GOOFINABOUT</h2>
+          <h2 className="fry">THEFRYGUY</h2>
+        </div>
+
         {!loading && (
-          <div>
-            <BarChart
-              width={1200}
-              height={800}
-              data={data}
-              margin={{
-                top: 20,
-                right: 20,
-                left: 20,
-                bottom: 20,
-              }}
-            >
-              <XAxis dataKey="name" />
-              <YAxis dataKey="votes" />
-              <Legend iconSize={30} />
-              <Bar dataKey="GoofinAbout" fill="red" label />
-              <Bar dataKey="TheFryGuy" fill="blue" label />
-            </BarChart>
+          <div className="charts">
+            {pieChartData && (
+              <ResponsiveContainer minHeight="40%" width="100%">
+                <PieChart>
+                  <Pie dataKey="value" data={pieChartData} label>
+                    {pieChartData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={colors[index]} />
+                    ))}
+                  </Pie>
+
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            )}
+
+            <ResponsiveContainer minHeight="40%" width="100%">
+              <LineChart data={lineChartData}>
+                <CartesianGrid strokeDasharray="10 10" />
+                <XAxis
+                  tickFormatter={(date) => date.substring(5, 10)}
+                  dataKey="date"
+                  domain={['auto', 'auto']}
+                />
+                <YAxis />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="TheFryGuy"
+                  stroke={colors[1]}
+                  activeDot={{ r: 8 }}
+                  strokeWidth={5}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="GoofinAbout"
+                  stroke={colors[0]}
+                  activeDot={{ r: 8 }}
+                  strokeWidth={5}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+            <ResponsiveContainer minHeight="40%" width="100%">
+              <BarChart data={data}>
+                <YAxis dataKey="votes" />
+                <XAxis dataKey="none" />
+
+                <Bar dataKey="GoofinAbout" fill={colors[0]} label />
+                <Bar dataKey="TheFryGuy" fill={colors[1]} label />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         )}
       </Container>

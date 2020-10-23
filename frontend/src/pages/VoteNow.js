@@ -104,6 +104,11 @@ const VoteNow = () => {
     setCanVote,
   } = useContext(context);
 
+  const today = new Date(
+    new Date().getFullYear(),
+    new Date().getMonth(),
+    new Date().getDate()
+  );
   async function fetchUrl(url, options, set) {
     const response = await fetch(url, options);
     const json = await response.json();
@@ -147,13 +152,8 @@ const VoteNow = () => {
       fetchUrl(viewerURL, null, setViewer);
     }
   }, [user]);
-  useEffect(() => {
-    const today = new Date(
-      new Date().getFullYear(),
-      new Date().getMonth(),
-      new Date().getDate()
-    );
 
+  useEffect(() => {
     if (params && user && viewer) {
       setLoading(false);
 
@@ -181,7 +181,7 @@ const VoteNow = () => {
       const data = {
         userId,
         username,
-        voteDate: new Date().toISOString(),
+        voteDate: today,
         candidate,
         voteId: Math.floor(Math.random() * 100000),
       };
@@ -242,7 +242,7 @@ const VoteNow = () => {
                   Vote Fry
                 </button>
               </div>
-              {!canVote && (
+              {error && (
                 <div>
                   <h2>{error}</h2>
 

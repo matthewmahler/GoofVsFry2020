@@ -10,6 +10,7 @@ const Viewer = require("../../models/Viewer");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
+  console.log("GOOF IS LIVE NOW");
   ping.start();
   res.json({ msg: "Ping started" });
 });

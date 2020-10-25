@@ -33,7 +33,7 @@ const Container = styled.div`
     grid-template-columns: 5fr 1fr 5fr;
     width: 100%;
     height: 50vh;
-    align-items: center;
+    align-content: center;
     justify-content: center;
 
     h2 {
@@ -46,6 +46,18 @@ const Container = styled.div`
       width: 100%;
       :hover {
         filter: drop-shadow(16px 16px 20px #eeeeee);
+      }
+    }
+  }
+  @media (max-width: 769px) {
+    h1 {
+      font-size: 10vw;
+    }
+    div {
+      grid-template-columns: 1fr;
+      h2 {
+        font-size: 8vw;
+        margin: 0 auto;
       }
     }
   }
@@ -71,7 +83,7 @@ const TheCandidates = () => {
                 border="0"
               />
             </a>
-            <h2>V.S.</h2>
+            <h2>VS</h2>
             <a href="/Fry">
               <img
                 src="https://fontmeme.com/permalink/201009/71ffc2ded6db45d7d0d88ce296e5efc5.png"

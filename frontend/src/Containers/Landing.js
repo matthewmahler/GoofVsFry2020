@@ -49,6 +49,8 @@ const Container = styled.div`
       cursor: pointer;
     }
   }
+  @media (max-width: 769px) {
+  }
 `;
 const Landing = () => {
   const data = useStaticQuery(query);
@@ -88,11 +90,11 @@ const Landing = () => {
             />
           </div>
         </div>
-        <Link
-          to={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`}
+        <a
+          href={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`}
         >
           VOTE NOW
-        </Link>
+        </a>
       </Container>
     </BackgroundImage>
   );

@@ -34,12 +34,33 @@ const Container = styled.header`
     }
 
     ul {
-      mix-blend-mode: difference;
-
       li {
         font-size: 2rem;
         margin-right: 2rem;
         display: inline;
+      }
+    }
+  }
+  @media (max-width: 769px) {
+    nav {
+      text-align: center;
+      h1 {
+        text-align: center;
+        font-size: 3vw;
+        margin-left: 0.5rem;
+        padding: 0;
+      }
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        li {
+          margin: 0 auto;
+          font-size: 2vw;
+        }
       }
     }
   }

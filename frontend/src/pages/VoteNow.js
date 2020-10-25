@@ -84,6 +84,33 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 769px) {
+    h1 {
+      font-size: 8vw;
+    }
+    div {
+      h2,
+      a {
+        font-size: 5vw;
+      }
+      h3 {
+        text-align: center;
+        width: 100%;
+        font-size: 4vw;
+        color: red;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 3vw;
+      }
+    }
+    .vote {
+      button {
+        font-size: 6vw;
+        padding: 2rem;
+      }
+    }
+  }
 `;
 
 const VoteNow = () => {
@@ -91,6 +118,7 @@ const VoteNow = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // get global context
   const {
     setParams,
     params,
@@ -104,18 +132,22 @@ const VoteNow = () => {
     setCanVote,
   } = useContext(context);
 
+  //get todays date minus the timestamp
   const today = new Date(
     new Date().getFullYear(),
     new Date().getMonth(),
     new Date().getDate()
   );
+
+  // reusable fetch function
   async function fetchUrl(url, options, set) {
     const response = await fetch(url, options);
     const json = await response.json();
-
     set(json);
   }
 
+  // effect to run on component mount
+  // get the parameters from the url bar and set them to state
   useEffect(() => {
     function getSearchParameters() {
       var prmstr = window.location.hash.substr(1);
@@ -123,7 +155,6 @@ const VoteNow = () => {
         ? transformToAssocArray(prmstr)
         : {};
     }
-
     function transformToAssocArray(prmstr) {
       var params = {};
       var prmarr = prmstr.split('&');
@@ -135,6 +166,10 @@ const VoteNow = () => {
     }
     setParams(getSearchParameters());
   }, []);
+
+  // effect runs after params have been set
+  // use the returned params to call the twitch user service
+  // then set the returned user into to state
   useEffect(() => {
     if (params !== null) {
       const userURL = `https://id.twitch.tv/oauth2/userinfo`;
@@ -146,6 +181,9 @@ const VoteNow = () => {
     }
   }, [params]);
 
+  // effect runs once user is set
+  // call the database for the user's viewer row in the Viewer table
+  // set that viewer info to state
   useEffect(() => {
     if (user !== null) {
       const viewerURL = `http://localhost:5000/api/viewers/${user.preferred_username}`;
@@ -153,6 +191,8 @@ const VoteNow = () => {
     }
   }, [user]);
 
+  // effect runs once params, user and viewer start are all set
+  // determine if the viewer is eligible for a vote that day
   useEffect(() => {
     if (params && user && viewer) {
       setLoading(false);
@@ -162,22 +202,48 @@ const VoteNow = () => {
         new Date(viewer.lastVoteDate).getMonth(),
         new Date(viewer.lastVoteDate).getDate()
       );
+      const lastWatchDate = new Date(
+        new Date(viewer.lastWatchDate).getFullYear(),
+        new Date(viewer.lastWatchDate).getMonth(),
+        new Date(viewer.lastWatchDate).getDate()
+      );
+      // they have voted already today
       if (today.getTime() === lastVoteDate.getTime()) {
         setCanVote(false);
-        setError(`User: ${viewer.username} cannot vote at this time`);
+        setError(`User: ${viewer.username} has already voted today`);
         const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
         fetchUrl(votesURL, null, setVotes);
-      } else if (lastVoteDate === null) {
+      } else if (
+        // they have voted before, but not today, but they didnt watch today
+        today.getTime() !== lastVoteDate.getTime() &&
+        today.getTime() !== lastWatchDate.getTime() &&
+        lastVoteDate !== null
+      ) {
+        setError(
+          `User: ${viewer.username} has voted previously, but did not watch the stream today`
+        );
+        setCanVote(false);
+      } else if (
+        // user has never voted
+        lastVoteDate === null
+      ) {
+        console.log(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);
       } else {
+        // catch all just let them vote and figure it out later
         setCanVote(true);
       }
     }
   }, [params, user, viewer]);
+
+  // vote function
   async function vote(userId, username, candidate) {
+    // if they are eligible to vote
     if (canVote) {
       const vote = 'http://localhost:5000/api/votes';
       const updateViewer = `http://localhost:5000/api/viewers/${user.preferred_username.toLowerCase()}`;
+
+      // vote data
       const data = {
         userId,
         username,
@@ -185,10 +251,12 @@ const VoteNow = () => {
         candidate,
         voteId: Math.floor(Math.random() * 100000),
       };
+      // updated viewer data
       const viewerData = {
         lastVoteDate: new Date().toISOString(),
         canVote: 'false',
       };
+      // add a vote to the database
       const voteResponse = await fetch(vote, {
         method: 'POST',
         headers: {
@@ -196,6 +264,7 @@ const VoteNow = () => {
         },
         body: JSON.stringify(data),
       });
+      // update the viewer to rflect voting today
       const viewerResponse = await fetch(updateViewer, {
         method: 'PUT',
         headers: {
@@ -206,6 +275,7 @@ const VoteNow = () => {
       const json = await voteResponse.json();
       const json2 = await viewerResponse.json();
       setCanVote(false);
+      // get the users new total votes
       const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
       fetchUrl(votesURL, null, setVotes);
       console.log(await json);
@@ -225,7 +295,6 @@ const VoteNow = () => {
           {!loading && (
             <>
               {votes && <h3>You have voted {votes.length} times so far!</h3>}
-
               <div className="vote">
                 <button
                   disabled={!canVote}
@@ -245,7 +314,6 @@ const VoteNow = () => {
               {error && (
                 <div>
                   <h2>{error}</h2>
-
                   <p>
                     Please message @EmoMatt#4019 on Discord in the #bugs channel
                     if you think this is a mistake

@@ -19,7 +19,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 60vh;
+    min-height: 60vh;
     justify-items: center;
     color: #eeeeee;
     div {
@@ -27,15 +27,36 @@ const Container = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      width: 50%;
+      width: 70%;
       h2 {
         font-size: 3rem;
+        margin: 0 auto;
       }
       p {
         font-size: 2rem;
       }
       li {
         font-size: 2rem;
+      }
+    }
+  }
+  @media (max-width: 769px) {
+    img {
+      width: 90%;
+    }
+    div {
+      grid-template-columns: 1fr;
+      div {
+        width: 90%;
+        h2 {
+          font-size: 6vw;
+        }
+        p {
+          font-size: 3vw;
+        }
+        li {
+          font-size: 3vw;
+        }
       }
     }
   }

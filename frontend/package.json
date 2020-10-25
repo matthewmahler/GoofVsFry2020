@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Simple Gatsby starter linked to Contentful",
+  "name": "goofvsfry2020",
+  "description": "",
   "license": "MIT",
-  "author": "Connor Wilson <me@cwlsn.com> (https://cwlsn.com)",
-  "homepage": "https://gatsby-simple-contentful-starter.netlify.com",
-  "bugs": "https://github.com/cwlsn/gatsby-simple-contentful-starter/issues",
+  "author": "",
+  "homepage": "https://wwwmakegoofgreatagain.com",
+  "bugs": "",
   "repository": "github:cwlsn/gatsby-simple-contentful-starter",
   "scripts": {
     "develop": "gatsby develop",

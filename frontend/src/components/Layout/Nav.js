@@ -100,12 +100,7 @@ const Nav = () => {
     },
     initial: { x: -20, opacity: 0 },
   };
-  const navItems = [
-    'The Candidates',
-    'How To Vote',
-    'Results',
-    'About This Site',
-  ];
+  const navItems = ['The Candidates', 'How To Vote', 'Results'];
 
   const url = `https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`;
   return (
@@ -130,6 +125,15 @@ const Nav = () => {
               </motion.li>
             );
           })}
+          <motion.li variants={liVariants}>
+            <a
+              href="https://mattmahler.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              About The Dev
+            </a>
+          </motion.li>
         </motion.ul>
       </motion.nav>
     </Container>

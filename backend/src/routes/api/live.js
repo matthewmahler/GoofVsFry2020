@@ -22,8 +22,11 @@ const ping = cron.schedule(
     console.log(`Is Live: ${isLive}`);
     if (isLive) {
       addNewViewers();
+      console.log("PINGING STREAM EVERY 10 MINUTES");
+    } else {
+      console.log("GOOF IS NO LONGER LIVE, STOPPING PING");
+      ping.stop();
     }
-    console.log("PINGING STREAM EVERY 10 MINUTES");
   },
   { scheduled: false }
 );

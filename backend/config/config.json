@@ -16,10 +16,10 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "mmahler@goof-vs-fry-db-server",
+    "password": "139113Mm!",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "goof-vs-fry-db-server.mysql.database.azure.com",
     "dialect": "mysql",
     "operatorsAliases": false
   }

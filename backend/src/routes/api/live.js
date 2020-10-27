@@ -75,7 +75,13 @@ const addNewViewers = async () => {
     global_mods,
     viewers
   );
-
+  const today = formatter.format(
+    new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      new Date().getDate()
+    ).getTime()
+  );
   // schedule timer
   // get all the viewers in the DB
   const allViewersObject = await Viewer.findAll({
@@ -92,13 +98,6 @@ const addNewViewers = async () => {
     }).catch(errHandler);
 
     if (viewer) {
-      const today = formatter.format(
-        new Date(
-          new Date().getFullYear(),
-          new Date().getMonth(),
-          new Date().getDate()
-        ).getTime()
-      );
       const lastWatchDate = formatter.format(
         new Date(
           new Date(viewer.lastWatchDate).getFullYear(),

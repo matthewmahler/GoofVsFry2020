@@ -21,12 +21,11 @@ jobs:
         node-version: '10.x'
 
     - name: npm install, build, and test
+      working-directory: ./backend
       run: 
-        cd ./backend/|
         npm install
         npm run build --if-present
         npm run test --if-present
-        npm run start
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
@@ -34,4 +33,4 @@ jobs:
         app-name: 'goof-vs-fry-backend'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_f534ac031ad84a8e99adb85741d694b9 }}
-        package: .
+        package: './backend'

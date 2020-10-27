@@ -192,7 +192,7 @@ const Results = () => {
   };
 
   useEffect(() => {
-    const url = 'http://localhost:5000/api/votes';
+    const url = `${process.env.GATSBY_BACKEND_HOST}api/votes`;
     fetchUrl(url, null, setVotes);
   }, []);
   useEffect(() => {

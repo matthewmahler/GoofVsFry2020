@@ -186,7 +186,7 @@ const VoteNow = () => {
   // set that viewer info to state
   useEffect(() => {
     if (user !== null) {
-      const viewerURL = `http://localhost:5000/api/viewers/${user.preferred_username}`;
+      const viewerURL = `${process.env.GATSBY_BACKEND_HOST}api/viewers/${user.preferred_username}`;
       fetchUrl(viewerURL, null, setViewer);
     }
   }, [user]);
@@ -211,7 +211,7 @@ const VoteNow = () => {
       if (today.getTime() === lastVoteDate.getTime()) {
         setCanVote(false);
         setError(`User: ${viewer.username} has already voted today`);
-        const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
+        const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
         fetchUrl(votesURL, null, setVotes);
       } else if (
         // they have voted before, but not today, but they didnt watch today
@@ -240,8 +240,10 @@ const VoteNow = () => {
   async function vote(userId, username, candidate) {
     // if they are eligible to vote
     if (canVote) {
-      const vote = 'http://localhost:5000/api/votes';
-      const updateViewer = `http://localhost:5000/api/viewers/${user.preferred_username.toLowerCase()}`;
+      const vote = `${process.env.GATSBY_BACKEND_HOST}api/votes`;
+      const updateViewer = `${
+        process.env.GATSBY_BACKEND_HOST
+      }api/viewers/${user.preferred_username.toLowerCase()}`;
 
       // vote data
       const data = {
@@ -276,7 +278,7 @@ const VoteNow = () => {
       const json2 = await viewerResponse.json();
       setCanVote(false);
       // get the users new total votes
-      const votesURL = `http://localhost:5000/api/votes/${user.sub}`;
+      const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
       fetchUrl(votesURL, null, setVotes);
       console.log(await json);
       console.log(await json2);

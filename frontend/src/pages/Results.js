@@ -233,7 +233,9 @@ const Results = () => {
   // concat them all together
 
   const compilePieChartData = async () => {
-    setPieChartData([
+    const divider = votes.length - chairCount.length;
+
+    const withChair = [
       {
         name: 'GoofinAbout',
         value: Math.round((goofCount.length / votes.length) * 100),
@@ -242,13 +244,23 @@ const Results = () => {
         name: 'TheFryGuy',
         value: Math.round((fryCount.length / votes.length) * 100),
       },
-      showChair
-        ? {
-            name: 'Chair',
-            value: Math.round((chairCount.length / votes.length) * 100),
-          }
-        : null,
-    ]);
+      {
+        name: 'Chair',
+        value: Math.round((chairCount.length / votes.length) * 100),
+      },
+    ];
+    const withoutChair = [
+      {
+        name: 'GoofinAbout',
+        value: Math.round((goofCount.length / divider) * 100),
+      },
+      {
+        name: 'TheFryGuy',
+        value: Math.round((fryCount.length / divider) * 100),
+      },
+    ];
+
+    setPieChartData(showChair ? withChair : withoutChair);
     setLoading(false);
   };
 

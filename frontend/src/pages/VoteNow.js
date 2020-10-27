@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Layout from '../components/Layout';
 import BackgroundImage from 'gatsby-background-image';
-
+import { faChair } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { context } from '../Context/provider';
@@ -257,9 +258,9 @@ const VoteNow = () => {
   }, [params, user, viewer]);
 
   // vote function
-  async function vote(userId, username, candidate) {
+  async function vote(userId, username, candidate, isChair) {
     // if they are eligible to vote
-    if (canVote) {
+    if (canVote || isChair) {
       const vote = `${process.env.GATSBY_BACKEND_HOST}api/votes`;
       const updateViewer = `${
         process.env.GATSBY_BACKEND_HOST
@@ -320,14 +321,16 @@ const VoteNow = () => {
                 <button
                   disabled={!canVote}
                   onClick={() =>
-                    vote(user.sub, user.preferred_username, 'Goof')
+                    vote(user.sub, user.preferred_username, 'Goof', false)
                   }
                 >
                   Vote Goof
                 </button>
                 <button
                   disabled={!canVote}
-                  onClick={() => vote(user.sub, user.preferred_username, 'Fry')}
+                  onClick={() =>
+                    vote(user.sub, user.preferred_username, 'Fry', false)
+                  }
                 >
                   Vote Fry
                 </button>
@@ -343,6 +346,13 @@ const VoteNow = () => {
               )}
             </>
           )}
+          <FontAwesomeIcon
+            icon={faChair}
+            onClick={() =>
+              vote(user.sub, user.preferred_username, 'Chair', true)
+            }
+            style={{ position: 'fixed', bottom: 0, left: 0, cursor: 'pointer' }}
+          />
         </Container>
       </BackgroundImage>
     </Layout>

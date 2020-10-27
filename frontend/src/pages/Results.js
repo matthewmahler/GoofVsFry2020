@@ -15,6 +15,8 @@ import {
   CartesianGrid,
   LineChart,
 } from 'recharts';
+import { faChair } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { context } from '../Context/provider';
 const Container = styled.div`
   display: flex;
@@ -39,7 +41,7 @@ const Container = styled.div`
   .legend {
     min-width: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     .goof {
       color: #ff5a50;
     }
@@ -132,6 +134,8 @@ const Results = () => {
   const [lineChartData, setLineChartData] = useState(null);
   const [pieChartData, setPieChartData] = useState(null);
   const [leaderBoard, setLeaderBoard] = useState(null);
+  const [showChair, setShowChair] = useState(false);
+  const [chairCount, setChairCount] = useState(0);
 
   const {
     votes,
@@ -144,16 +148,20 @@ const Results = () => {
   const setCounts = async () => {
     let tempGoof = [];
     let tempFry = [];
+    let tempChair = [];
     Object.values(votes).forEach((vote) => {
       if (vote.candidate === 'Goof') {
         tempGoof.push(vote);
       } else if (vote.candidate === 'Fry') {
         tempFry.push(vote);
+      } else if (vote.candidate === 'Chair') {
+        tempChair.push(vote);
       }
     });
 
     setGoofCount(tempGoof);
     setFryCount(tempFry);
+    setChairCount(tempChair);
   };
 
   async function fetchUrl(url, options, set) {
@@ -202,13 +210,16 @@ const Results = () => {
       compileLineChartData();
       compileLeaderBoard(votes);
     }
-  }, [votes]);
+  }, [votes, showChair]);
 
   const data = [
     {
       GoofinAbout: goofCount.length,
       TheFryGuy: fryCount.length,
-      votes: Math.ceil((goofCount.length + fryCount.length) / 1.9),
+      Chair: chairCount.length,
+      votes: Math.ceil(
+        (goofCount.length + fryCount.length + chairCount.length) / 2.9
+      ),
     },
   ];
 
@@ -231,6 +242,12 @@ const Results = () => {
         name: 'TheFryGuy',
         value: Math.round((fryCount.length / votes.length) * 100),
       },
+      showChair
+        ? {
+            name: 'Chair',
+            value: Math.round((chairCount.length / votes.length) * 100),
+          }
+        : null,
     ]);
     setLoading(false);
   };
@@ -239,7 +256,7 @@ const Results = () => {
     let tempArr = [];
     let tempGoof = [];
     let tempFry = [];
-
+    let tempChair = [];
     votes
       .map((vote) =>
         new Date(
@@ -269,6 +286,8 @@ const Results = () => {
               tempGoof++;
             } else if (vote.candidate === 'Fry') {
               tempFry++;
+            } else if (vote.candidate === 'Chair') {
+              tempChair++;
             } else {
               return;
             }
@@ -278,18 +297,26 @@ const Results = () => {
           date: date.toISOString(),
           GoofinAbout: tempGoof,
           TheFryGuy: tempFry,
+          Chair: tempChair,
         });
       });
     setLineChartData(tempArr);
   };
 
-  const colors = ['#FF5A50', '#5768FF'];
+  const colors = ['#FF5A50', '#5768FF', '#91f573'];
   return (
     <Layout>
       <Container>
         <h1>Results</h1>
         <div className="legend">
           <h2 className="goof">GOOFINABOUT</h2>
+          <FontAwesomeIcon
+            icon={faChair}
+            color={showChair ? colors[2] : 'black'}
+            style={{ width: '100%', cursor: 'pointer' }}
+            onClick={() => setShowChair(!showChair)}
+            size={showChair ? '6x' : '1x'}
+          />
           <h2 className="fry">THEFRYGUY</h2>
         </div>
 
@@ -331,14 +358,27 @@ const Results = () => {
                   activeDot={{ r: 3 }}
                   strokeWidth={2}
                 />
+                {showChair ? (
+                  <Line
+                    type="monotone"
+                    dataKey="Chair"
+                    stroke={colors[2]}
+                    activeDot={{ r: 3 }}
+                    strokeWidth={2}
+                  />
+                ) : null}
               </LineChart>
             </ResponsiveContainer>
             <ResponsiveContainer height="90%" width="100%">
               <BarChart data={data}>
                 <YAxis dataKey="votes" />
                 <XAxis dataKey="none" />
+
                 <Bar dataKey="GoofinAbout" fill={colors[0]} label />
                 <Bar dataKey="TheFryGuy" fill={colors[1]} label />
+                {showChair ? (
+                  <Bar dataKey="Chair" fill={colors[2]} label />
+                ) : null}
               </BarChart>
             </ResponsiveContainer>
             <div className="leaderboard">

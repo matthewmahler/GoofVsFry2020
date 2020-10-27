@@ -353,13 +353,14 @@ const Results = () => {
                 } else if (key === 1) {
                   return (
                     <h5>
-                      1st - {u.username} - {u.votes} votes
+                      2nd - {u.username} - {u.votes} votes
                     </h5>
                   );
                 } else {
                   return (
                     <h6>
-                      1st - {u.username} - {u.votes} votes
+                      {key === 2 ? '3rd' : `${key}th`} - {u.username} -{' '}
+                      {u.votes} votes
                     </h6>
                   );
                 }

@@ -19,7 +19,6 @@ router.get("/:userId", async (req, res) => {
   }).catch(errHandler);
 
   if (votes) {
-    console.log(votes);
     res.json(votes);
   } else {
     res.status(400).json({ msg: "votes not found" });

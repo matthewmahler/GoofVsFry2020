@@ -356,7 +356,7 @@ const Results = () => {
                       2nd - {u.username} - {u.votes} votes
                     </h5>
                   );
-                } else if (key > 9) {
+                } else if (key > 10) {
                   return;
                 } else {
                   return (

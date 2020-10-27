@@ -232,7 +232,7 @@ const VoteNow = () => {
         // they have voted before, but not today, but they didnt watch today
         today !== lastVoteDate &&
         today !== lastWatchDate &&
-        lastVoteDate !== null
+        lastVoteDate !== '12/31/1969'
       ) {
         console.log(
           `User: ${viewer.username} has voted previously, but did not watch the stream today`
@@ -244,7 +244,7 @@ const VoteNow = () => {
         setCanVote(false);
       } else if (
         // user has never voted
-        lastVoteDate === null
+        lastVoteDate === '12/31/1969'
       ) {
         console.log(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);

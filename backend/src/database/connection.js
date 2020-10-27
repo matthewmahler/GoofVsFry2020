@@ -1,7 +1,10 @@
 const Sequelize = require("sequelize");
+const dotenv = require("dotenv");
 
-const sequelize = new Sequelize("goofvsfry2020", "root", "1391", {
-  host: "127.0.0.1",
+dotenv.config();
+const { MYSQL_USERNAME, MYSQL_HOST, MYSQL_PASSWORD } = process.env;
+const sequelize = new Sequelize("goofvsfry", MYSQL_USERNAME, MYSQL_PASSWORD, {
+  host: MYSQL_HOST,
   dialect: "mysql",
 });
 

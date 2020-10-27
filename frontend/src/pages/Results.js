@@ -408,12 +408,12 @@ const Results = () => {
                       2nd - {u.username} - {u.votes} votes
                     </h5>
                   );
-                } else if (key > 10) {
+                } else if (key > 9) {
                   return;
                 } else {
                   return (
                     <h6>
-                      {key === 2 ? '3rd' : `${key}th`} - {u.username} -{' '}
+                      {key === 2 ? '3rd' : `${key + 1}th`} - {u.username} -{' '}
                       {u.votes} votes
                     </h6>
                   );

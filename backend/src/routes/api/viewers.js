@@ -64,7 +64,6 @@ router.put("/:username", async (req, res) => {
     viewer.lastWatchDate = updViewer.lastWatchDate
       ? updViewer.lastWatchDate
       : viewer.lastWatchDate;
-    viewer.canVote = updViewer.canVote ? updViewer.canVote : viewer.canVote;
 
     const result = await viewer.save().catch(errHandler);
     console.log("--------------------VIEWER UPDATED----------------------");

@@ -144,7 +144,7 @@ const Results = () => {
   const setCounts = async () => {
     let tempGoof = [];
     let tempFry = [];
-    await Object.values(votes).forEach((vote) => {
+    Object.values(votes).forEach((vote) => {
       if (vote.candidate === 'Goof') {
         tempGoof.push(vote);
       } else if (vote.candidate === 'Fry') {
@@ -293,7 +293,7 @@ const Results = () => {
           <h2 className="fry">THEFRYGUY</h2>
         </div>
 
-        {!loading && (
+        {!loading && votes.length > 0 ? (
           <div className="charts">
             {pieChartData && (
               <ResponsiveContainer height="90%" width="100%" className="hide">
@@ -343,38 +343,31 @@ const Results = () => {
             </ResponsiveContainer>
             <div className="leaderboard">
               <h3>Leaderboard</h3>
-              <h4>
-                1st - {leaderBoard[0].username} - {leaderBoard[0].votes} votes
-              </h4>
-              <h5>
-                2nd - {leaderBoard[1].username} - {leaderBoard[1].votes} votes
-              </h5>
-              <h6>
-                3rd - {leaderBoard[2].username} - {leaderBoard[2].votes} votes
-              </h6>
-              <h6>
-                4th - {leaderBoard[3].username} - {leaderBoard[3].votes} votes
-              </h6>
-              <h6>
-                5th - {leaderBoard[4].username} - {leaderBoard[4].votes} votes
-              </h6>
-              <h6>
-                6th - {leaderBoard[5].username} - {leaderBoard[5].votes} votes
-              </h6>
-              <h6>
-                7th - {leaderBoard[6].username} - {leaderBoard[6].votes} votes
-              </h6>
-              <h6>
-                8th - {leaderBoard[7].username} - {leaderBoard[7].votes} votes
-              </h6>
-              <h6>
-                9th - {leaderBoard[8].username} - {leaderBoard[8].votes} votes
-              </h6>
-              <h6>
-                10th - {leaderBoard[9].username} - {leaderBoard[9].votes} votes
-              </h6>
+              {leaderBoard.map((u, key) => {
+                if (key === 0) {
+                  return (
+                    <h4>
+                      1st - {u.username} - {u.votes} votes
+                    </h4>
+                  );
+                } else if (key === 1) {
+                  return (
+                    <h5>
+                      1st - {u.username} - {u.votes} votes
+                    </h5>
+                  );
+                } else {
+                  return (
+                    <h6>
+                      1st - {u.username} - {u.votes} votes
+                    </h6>
+                  );
+                }
+              })}
             </div>
           </div>
+        ) : (
+          <h3>No Results Yet</h3>
         )}
       </Container>
     </Layout>

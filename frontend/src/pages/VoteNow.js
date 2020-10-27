@@ -132,11 +132,19 @@ const VoteNow = () => {
     setCanVote,
   } = useContext(context);
 
+  const formatter = new Intl.DateTimeFormat('en-us', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
+
   //get todays date minus the timestamp
-  const today = new Date(
-    new Date().getFullYear(),
-    new Date().getMonth(),
-    new Date().getDate()
+  const today = formatter.format(
+    new Date(
+      new Date().getFullYear(),
+      new Date().getMonth(),
+      new Date().getDate()
+    ).getTime()
   );
 
   // reusable fetch function
@@ -196,29 +204,40 @@ const VoteNow = () => {
   useEffect(() => {
     if (params && user && viewer) {
       setLoading(false);
+      const lastVoteDate = formatter.format(
+        new Date(
+          new Date(viewer.lastVoteDate).getFullYear(),
+          new Date(viewer.lastVoteDate).getMonth(),
+          new Date(viewer.lastVoteDate).getDate()
+        ).getTime()
+      );
 
-      const lastVoteDate = new Date(
-        new Date(viewer.lastVoteDate).getFullYear(),
-        new Date(viewer.lastVoteDate).getMonth(),
-        new Date(viewer.lastVoteDate).getDate()
+      const lastWatchDate = formatter.format(
+        new Date(
+          new Date(viewer.lastWatchDate).getFullYear(),
+          new Date(viewer.lastWatchDate).getMonth(),
+          new Date(viewer.lastWatchDate).getDate()
+        ).getTime()
       );
-      const lastWatchDate = new Date(
-        new Date(viewer.lastWatchDate).getFullYear(),
-        new Date(viewer.lastWatchDate).getMonth(),
-        new Date(viewer.lastWatchDate).getDate()
-      );
+
       // they have voted already today
-      if (today.getTime() === lastVoteDate.getTime()) {
+      if (today === lastVoteDate) {
+        console.log(`User: ${viewer.username} has already voted today`);
+        console.log({ today, lastVoteDate });
         setCanVote(false);
         setError(`User: ${viewer.username} has already voted today`);
         const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
         fetchUrl(votesURL, null, setVotes);
       } else if (
         // they have voted before, but not today, but they didnt watch today
-        today.getTime() !== lastVoteDate.getTime() &&
-        today.getTime() !== lastWatchDate.getTime() &&
+        today !== lastVoteDate &&
+        today !== lastWatchDate &&
         lastVoteDate !== null
       ) {
+        console.log(
+          `User: ${viewer.username} has voted previously, but did not watch the stream today`
+        );
+        console.log({ today, lastVoteDate, lastWatchDate });
         setError(
           `User: ${viewer.username} has voted previously, but did not watch the stream today`
         );
@@ -230,7 +249,8 @@ const VoteNow = () => {
         console.log(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);
       } else {
-        // catch all just let them vote and figure it out later
+        console.log('IDK WHAT HAPPENED');
+        console.log({ today, lastVoteDate, lastWatchDate });
         setCanVote(true);
       }
     }
@@ -255,8 +275,7 @@ const VoteNow = () => {
       };
       // updated viewer data
       const viewerData = {
-        lastVoteDate: new Date().toISOString(),
-        canVote: 'false',
+        lastVoteDate: today,
       };
       // add a vote to the database
       const voteResponse = await fetch(vote, {
@@ -274,9 +293,9 @@ const VoteNow = () => {
         },
         body: JSON.stringify(viewerData),
       });
+      setCanVote(false);
       const json = await voteResponse.json();
       const json2 = await viewerResponse.json();
-      setCanVote(false);
       // get the users new total votes
       const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
       fetchUrl(votesURL, null, setVotes);

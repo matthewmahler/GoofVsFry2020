@@ -19,6 +19,7 @@ router.get("/:userId", async (req, res) => {
   }).catch(errHandler);
 
   if (votes) {
+    console.log(votes);
     res.json(votes);
   } else {
     res.status(400).json({ msg: "votes not found" });
@@ -38,6 +39,9 @@ router.post("/", async (req, res) => {
   const vote = await Vote.create(newVote).catch(errHandler);
 
   if (vote) {
+    console.log("--------------------NEW VOTE CREATED--------------------");
+    console.log(vote);
+    console.log("--------------------------------------------------------");
     res.json(vote);
   } else {
     res.status(500).json({ msg: "internal db error occoured" });

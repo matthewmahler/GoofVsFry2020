@@ -10,7 +10,10 @@ const Viewer = require("../../models/Viewer");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  console.log("GOOF IS LIVE NOW");
+  console.log("--------------------------------------------------------");
+  console.log("----------------GOOF IS LIVE NOW------------------------");
+  console.log("--------------------------------------------------------");
+
   ping.start();
   res.json({ msg: "Ping started" });
 });
@@ -22,9 +25,14 @@ const ping = cron.schedule(
     console.log(`Is Live: ${isLive}`);
     if (isLive) {
       addNewViewers();
+      console.log("--------------------------------------------------------");
       console.log("PINGING STREAM EVERY 10 MINUTES");
+      console.log("--------------------------------------------------------");
     } else {
+      console.log("--------------------------------------------------------");
       console.log("GOOF IS NO LONGER LIVE, STOPPING PING");
+      console.log("--------------------------------------------------------");
+
       ping.stop();
     }
   },
@@ -84,21 +92,27 @@ const addNewViewers = async () => {
     }).catch(errHandler);
 
     if (viewer) {
-      const today = new Date(
-        new Date().getFullYear(),
-        new Date().getMonth(),
-        new Date().getDate()
+      const today = formatter.format(
+        new Date(
+          new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate()
+        ).getTime()
       );
-      const lastWatchDate = new Date(
-        new Date(viewer.lastWatchDate).getFullYear(),
-        new Date(viewer.lastWatchDate).getMonth(),
-        new Date(viewer.lastWatchDate).getDate()
+      const lastWatchDate = formatter.format(
+        new Date(
+          new Date(viewer.lastWatchDate).getFullYear(),
+          new Date(viewer.lastWatchDate).getMonth(),
+          new Date(viewer.lastWatchDate).getDate()
+        ).getTime()
       );
 
-      if (today.getTime() !== lastWatchDate.getTime()) {
+      if (today !== lastWatchDate) {
         viewer.lastWatchDate = today;
         viewer.canVote = true;
-        console.log(`updated: ${u}`);
+        console.log("-----------------------UPDATED VIEWER-------------------");
+        console.log(viewer);
+        console.log("--------------------------------------------------------");
       }
 
       const result = await viewer.save().catch(errHandler);
@@ -109,15 +123,12 @@ const addNewViewers = async () => {
     const newViewer = {
       username: n,
       lastVoteDate: null,
-      lastWatchDate: new Date(
-        new Date().getFullYear(),
-        new Date().getMonth(),
-        new Date().getDate()
-      ),
-      canVote: true,
+      lastWatchDate: today,
     };
     const createdViewer = await Viewer.create(newViewer).catch(errHandler);
-    console.log(`created: ${n}`);
+    console.log("-----------------------CREATED VIEWER-------------------");
+    console.log(newViewer);
+    console.log("--------------------------------------------------------");
   });
 };
 
@@ -125,4 +136,9 @@ const errHandler = (err) => {
   console.log("Error: ", err);
 };
 
+const formatter = new Intl.DateTimeFormat("en-us", {
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
 module.exports = router;

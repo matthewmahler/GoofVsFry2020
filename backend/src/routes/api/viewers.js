@@ -30,7 +30,6 @@ router.post("/", async (req, res) => {
     username: req.body.username,
     lastVoteDate: req.body.lastVoteDate,
     lastWatchDate: req.body.lastWatchDate,
-    canVote: req.body.canVote,
   };
 
   if (!newViewer.username) {
@@ -40,6 +39,9 @@ router.post("/", async (req, res) => {
   const viewer = await Viewer.create(newViewer).catch(errHandler);
 
   if (viewer) {
+    console.log("--------------------NEW VIEWER CREATED------------------");
+    console.log(viewer);
+    console.log("--------------------------------------------------------");
     res.json(viewer);
   } else {
     res.status(500).json({ msg: "internal db error occoured" });
@@ -65,7 +67,9 @@ router.put("/:username", async (req, res) => {
     viewer.canVote = updViewer.canVote ? updViewer.canVote : viewer.canVote;
 
     const result = await viewer.save().catch(errHandler);
-
+    console.log("--------------------VIEWER UPDATED----------------------");
+    console.log(result);
+    console.log("--------------------------------------------------------");
     res.json({ msg: "viewer updated", updViewer, result });
   } else {
     res.status(400).json({ msg: "viewer not found" });

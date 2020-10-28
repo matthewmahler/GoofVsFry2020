@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { context } from '../Context/provider';
+import moment from 'moment';
 
 const Container = styled.div`
   display: flex;
@@ -133,20 +134,8 @@ const VoteNow = () => {
     setCanVote,
   } = useContext(context);
 
-  const formatter = new Intl.DateTimeFormat('en-us', {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  });
-
   //get todays date minus the timestamp
-  const today = formatter.format(
-    new Date(
-      new Date().getFullYear(),
-      new Date().getMonth(),
-      new Date().getDate()
-    ).getTime()
-  );
+  const today = moment().format('YYYY-MM-DD');
 
   // reusable fetch function
   async function fetchUrl(url, options, set) {
@@ -205,21 +194,8 @@ const VoteNow = () => {
   useEffect(() => {
     if (params && user && viewer) {
       setLoading(false);
-      const lastVoteDate = formatter.format(
-        new Date(
-          new Date(viewer.lastVoteDate).getFullYear(),
-          new Date(viewer.lastVoteDate).getMonth(),
-          new Date(viewer.lastVoteDate).getDate()
-        ).getTime()
-      );
-
-      const lastWatchDate = formatter.format(
-        new Date(
-          new Date(viewer.lastWatchDate).getFullYear(),
-          new Date(viewer.lastWatchDate).getMonth(),
-          new Date(viewer.lastWatchDate).getDate()
-        ).getTime()
-      );
+      const lastVoteDate = viewer.lastVoteDate;
+      const lastWatchDate = viewer.lastWatchDate;
 
       // they have voted already today
       if (today === lastVoteDate) {
@@ -233,7 +209,7 @@ const VoteNow = () => {
         // they have voted before, but not today, but they didnt watch today
         today !== lastVoteDate &&
         today !== lastWatchDate &&
-        lastVoteDate !== '12/31/1969'
+        lastVoteDate !== '1969-31-12'
       ) {
         console.log(
           `User: ${viewer.username} has voted previously, but did not watch the stream today`
@@ -245,7 +221,7 @@ const VoteNow = () => {
         setCanVote(false);
       } else if (
         // user has never voted
-        lastVoteDate === '12/31/1969'
+        lastVoteDate === '1969-31-12'
       ) {
         console.log(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);
@@ -302,6 +278,7 @@ const VoteNow = () => {
       fetchUrl(votesURL, null, setVotes);
       console.log(await json);
       console.log(await json2);
+      setError(`Thank You ${viewer.username} for voting!`);
     }
   }
   return (

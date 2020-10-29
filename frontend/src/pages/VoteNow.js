@@ -242,15 +242,18 @@ const VoteNow = () => {
       } else {
         console.log('IDK WHAT HAPPENED');
         console.log({ today, lastVoteDate, lastWatchDate });
+        setError('IDK WHAT HAPPENED');
         setCanVote(false);
       }
     }
   }, [params, user, viewer]);
 
   // vote function
-  async function vote(userId, username, candidate, isChair) {
+  async function vote(userId, username, candidate, isChair, e) {
     // if they are eligible to vote
     if (canVote || isChair) {
+      setCanVote(false);
+
       const vote = `${process.env.GATSBY_BACKEND_HOST}api/votes`;
       const updateViewer = `${
         process.env.GATSBY_BACKEND_HOST
@@ -268,36 +271,44 @@ const VoteNow = () => {
       const viewerData = {
         lastVoteDate: today,
       };
+      setLoading(true);
       // add a vote to the database
-      const voteResponse = await fetch(vote, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      await fetchUrl(
+        vote,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+        console.log
+      );
       // update the viewer to rflect voting today
-      const viewerResponse = await fetch(updateViewer, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
+      await fetchUrl(
+        updateViewer,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(viewerData),
         },
-        body: JSON.stringify(viewerData),
-      });
-      setCanVote(false);
-      const json = await voteResponse.json();
-      const json2 = await viewerResponse.json();
+        console.log
+      );
       // get the users new total votes
       const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
-      fetchUrl(votesURL, null, setVotes);
-      console.log(await json);
-      console.log(await json2);
+      await fetchUrl(votesURL, null, setVotes);
+      setLoading(false);
+
       setError(`Thank You ${viewer.username} for voting!`);
       setChairPosition({
         x: getRandomInt(0, width),
         y: getRandomInt(0, height),
       });
     }
+    e.stopPropagation();
+    e.preventDefault();
   }
   return (
     <Layout>
@@ -316,16 +327,16 @@ const VoteNow = () => {
               <div className="vote">
                 <button
                   disabled={!canVote}
-                  onClick={() =>
-                    vote(user.sub, user.preferred_username, 'Goof', false)
+                  onClick={(e) =>
+                    vote(user.sub, user.preferred_username, 'Goof', false, e)
                   }
                 >
                   Vote Goof
                 </button>
                 <button
                   disabled={!canVote}
-                  onClick={() =>
-                    vote(user.sub, user.preferred_username, 'Fry', false)
+                  onClick={(e) =>
+                    vote(user.sub, user.preferred_username, 'Fry', false, e)
                   }
                 >
                   Vote Fry
@@ -344,8 +355,8 @@ const VoteNow = () => {
           )}
           <FontAwesomeIcon
             icon={faChair}
-            onClick={() =>
-              vote(user.sub, user.preferred_username, 'Chair', true)
+            onClick={(e) =>
+              vote(user.sub, user.preferred_username, 'Chair', true, e)
             }
             style={{
               position: 'fixed',

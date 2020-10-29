@@ -176,6 +176,7 @@ const VoteNow = () => {
         ? 'Voting is now open may the best chair... I mean candidate win :D'
         : 'This is the test voting phase, the real election begins 11/03/2020'
     );
+    setChairPosition({ x: getRandomInt(0, width), y: getRandomInt(0, height) });
   }, []);
 
   // effect runs after params have been set
@@ -350,7 +351,6 @@ const VoteNow = () => {
               position: 'fixed',
               top: chairPosition.y,
               left: chairPosition.x,
-              cursor: 'pointer',
               fontSize: '2px',
             }}
           />

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { context } from '../Context/provider';
+import { useWindowSize } from '../hooks/useWindowSize';
 import moment from 'moment';
 
 const Container = styled.div`
@@ -119,7 +120,10 @@ const VoteNow = () => {
   const img = useStaticQuery(query);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [message, setMessage] = useState(null);
+  const [chairPosition, setChairPosition] = useState({ x: 0, y: 0 });
+  let [width, height] = useWindowSize();
+  console.log(chairPosition);
   // get global context
   const {
     setParams,
@@ -143,7 +147,11 @@ const VoteNow = () => {
     const json = await response.json();
     set(json);
   }
-
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
   // effect to run on component mount
   // get the parameters from the url bar and set them to state
   useEffect(() => {
@@ -163,6 +171,12 @@ const VoteNow = () => {
       return params;
     }
     setParams(getSearchParameters());
+    const isBetween = moment(today).isBetween('2020-11-03', '2020-11-17');
+    setMessage(
+      isBetween
+        ? 'Voting is now open may the best chair... I mean candidate win :D'
+        : 'This is the test voting phase, the real election begins 11/03/2020'
+    );
   }, []);
 
   // effect runs after params have been set
@@ -279,6 +293,10 @@ const VoteNow = () => {
       console.log(await json);
       console.log(await json2);
       setError(`Thank You ${viewer.username} for voting!`);
+      setChairPosition({
+        x: getRandomInt(0, width),
+        y: getRandomInt(0, height),
+      });
     }
   }
   return (
@@ -293,6 +311,7 @@ const VoteNow = () => {
         <Container>
           {!loading && (
             <>
+              {message && <h3>{message}</h3>}
               {votes && <h3>You have voted {votes.length} times so far!</h3>}
               <div className="vote">
                 <button
@@ -328,7 +347,13 @@ const VoteNow = () => {
             onClick={() =>
               vote(user.sub, user.preferred_username, 'Chair', true)
             }
-            style={{ position: 'fixed', bottom: 0, left: 0, cursor: 'pointer' }}
+            style={{
+              position: 'fixed',
+              top: chairPosition.y,
+              left: chairPosition.x,
+              cursor: 'pointer',
+              fontSize: '2px',
+            }}
           />
         </Container>
       </BackgroundImage>

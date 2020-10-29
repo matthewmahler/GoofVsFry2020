@@ -42,6 +42,8 @@ const Container = styled.div`
     min-width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
     .goof {
       color: #ff5a50;
     }
@@ -217,9 +219,6 @@ const Results = () => {
       GoofinAbout: goofCount.length,
       TheFryGuy: fryCount.length,
       Chair: chairCount.length,
-      votes: Math.ceil(
-        (goofCount.length + fryCount.length + chairCount.length) / 2.9
-      ),
     },
   ];
 
@@ -325,9 +324,8 @@ const Results = () => {
           <FontAwesomeIcon
             icon={faChair}
             color={showChair ? colors[2] : 'black'}
-            style={{ width: '100%', cursor: 'pointer' }}
             onClick={() => setShowChair(!showChair)}
-            size={showChair ? '6x' : '1x'}
+            size={showChair ? '6x' : '1px'}
           />
           <h2 className="fry">THEFRYGUY</h2>
         </div>
@@ -336,8 +334,13 @@ const Results = () => {
           <div className="charts">
             {pieChartData && (
               <ResponsiveContainer height="90%" width="100%" className="hide">
-                <PieChart>
-                  <Pie dataKey="value" data={pieChartData} label>
+                <PieChart margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
+                  <Pie
+                    dataKey="value"
+                    nameKey="name"
+                    data={pieChartData}
+                    label="value"
+                  >
                     {pieChartData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={colors[index]} />
                     ))}
@@ -347,7 +350,10 @@ const Results = () => {
               </ResponsiveContainer>
             )}
             <ResponsiveContainer height="90%" width="100%" className="hide">
-              <LineChart data={lineChartData}>
+              <LineChart
+                data={lineChartData}
+                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+              >
                 <CartesianGrid strokeDasharray="5 5" />
                 <XAxis
                   tickFormatter={(date) => date.substring(5, 10)}
@@ -382,12 +388,20 @@ const Results = () => {
               </LineChart>
             </ResponsiveContainer>
             <ResponsiveContainer height="90%" width="100%">
-              <BarChart data={data}>
-                <YAxis dataKey="votes" />
+              <BarChart
+                data={data}
+                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+              >
+                <YAxis />
                 <XAxis dataKey="none" />
+                <Tooltip wrapperStyle={{ backgroundColor: '#040404' }} />
 
-                <Bar dataKey="GoofinAbout" fill={colors[0]} label />
-                <Bar dataKey="TheFryGuy" fill={colors[1]} label />
+                <Bar
+                  dataKey="GoofinAbout"
+                  fill={colors[0]}
+                  label="GoofinAbout"
+                />
+                <Bar dataKey="TheFryGuy" fill={colors[1]} label="TheFryGuy" />
                 {showChair ? (
                   <Bar dataKey="Chair" fill={colors[2]} label />
                 ) : null}

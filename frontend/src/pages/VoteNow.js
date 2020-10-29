@@ -123,7 +123,6 @@ const VoteNow = () => {
   const [message, setMessage] = useState(null);
   const [chairPosition, setChairPosition] = useState({ x: 0, y: 0 });
   let [width, height] = useWindowSize();
-  console.log(chairPosition);
   // get global context
   const {
     setParams,
@@ -223,7 +222,7 @@ const VoteNow = () => {
         // they have voted before, but not today, but they didnt watch today
         today !== lastVoteDate &&
         today !== lastWatchDate &&
-        lastVoteDate !== '1969-31-12'
+        lastVoteDate !== null
       ) {
         console.log(
           `User: ${viewer.username} has voted previously, but did not watch the stream today`
@@ -235,14 +234,14 @@ const VoteNow = () => {
         setCanVote(false);
       } else if (
         // user has never voted
-        lastVoteDate === '1969-31-12'
+        lastVoteDate === null
       ) {
         console.log(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);
       } else {
         console.log('IDK WHAT HAPPENED');
         console.log({ today, lastVoteDate, lastWatchDate });
-        setCanVote(true);
+        setCanVote(false);
       }
     }
   }, [params, user, viewer]);

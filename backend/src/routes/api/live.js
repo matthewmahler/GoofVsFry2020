@@ -13,13 +13,12 @@ router.get("/", async (req, res) => {
   console.log("--------------------------------------------------------");
   console.log("----------------GOOF IS LIVE NOW------------------------");
   console.log("--------------------------------------------------------");
-
   ping.start();
   res.json({ msg: "Ping started" });
 });
 
 const ping = cron.schedule(
-  "*/10 * * * *",
+  "*/2 * * * *",
   async () => {
     let isLive = await checkIfLive();
     console.log(`Is Live: ${isLive}`);
@@ -32,7 +31,6 @@ const ping = cron.schedule(
       console.log("--------------------------------------------------------");
       console.log("GOOF IS NO LONGER LIVE, STOPPING PING");
       console.log("--------------------------------------------------------");
-
       ping.stop();
     }
   },
@@ -40,17 +38,25 @@ const ping = cron.schedule(
 );
 
 const checkIfLive = async () => {
+  const auth = `https://id.twitch.tv/oauth2/token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&grant_type=client_credentials`;
+  const options = {
+    method: "POST",
+  };
+
+  const authRes = await fetch(auth, options).catch(errHandler);
+  const authJSON = await authRes.json();
+
   const response = await fetch(
-    "https://api.twitch.tv/helix/search/channels?query=goofinabout&live_only=true",
+    "https://api.twitch.tv/helix/search/channels?query=goofinabout",
     {
       headers: {
-        Authorization: "Bearer prau3ol6mg5glgek8m89ec2s9q5i3i",
+        Authorization: `Bearer ${authJSON.access_token}`,
         "Client-Id": process.env.CLIENT_ID,
       },
     }
   ).catch(errHandler);
   const json = await response.json();
-  console.log(json);
+  console.log(await json);
   return await json.data[0].is_live;
 };
 

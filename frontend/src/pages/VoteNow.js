@@ -122,6 +122,7 @@ const VoteNow = () => {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState(null);
   const [chairPosition, setChairPosition] = useState({ x: 0, y: 0 });
+  const [isBetween, setIsBetween] = useState(false);
   let [width, height] = useWindowSize();
   // get global context
   const {
@@ -170,10 +171,10 @@ const VoteNow = () => {
       return params;
     }
     setParams(getSearchParameters());
-    const isBetween = moment(today).isBetween('2020-11-03', '2020-11-17');
+    setIsBetween(moment(today).isBetween('2020-11-03', '2020-11-17'));
     setMessage(
       isBetween
-        ? 'Voting is now open may the best chair... I mean candidate win :D'
+        ? 'Voting is now open until 11/17/2020, may the best chair... I mean candidate win :D'
         : 'This is the test voting phase, the real election begins 11/03/2020'
     );
     setChairPosition({ x: getRandomInt(0, width), y: getRandomInt(0, height) });
@@ -211,6 +212,7 @@ const VoteNow = () => {
       const lastVoteDate = viewer.lastVoteDate;
       const lastWatchDate = viewer.lastWatchDate;
 
+      // if (!isBetween) {
       // they have voted already today
       if (today === lastVoteDate) {
         console.log(`User: ${viewer.username} has already voted today`);
@@ -244,6 +246,7 @@ const VoteNow = () => {
         lastVoteDate === null
       ) {
         console.log(`User: ${viewer.username} has never voted. ENJOY!`);
+        setError(`User: ${viewer.username} has never voted. ENJOY!`);
         setCanVote(true);
       } else {
         console.log('IDK WHAT HAPPENED');
@@ -252,6 +255,9 @@ const VoteNow = () => {
         setCanVote(false);
       }
     }
+    // } else {
+    //   setError('Voting is closed, please vist the results page');
+    // }
   }, [params, user, viewer]);
 
   // vote function

@@ -44,13 +44,14 @@ const checkIfLive = async () => {
     "https://api.twitch.tv/helix/search/channels?query=goofinabout&live_only=true",
     {
       headers: {
-        Authorization: "Bearer ann8c37jimqqggiq59av05iiz1sm4s",
+        Authorization: "Bearer prau3ol6mg5glgek8m89ec2s9q5i3i",
         "Client-Id": process.env.CLIENT_ID,
       },
     }
-  );
+  ).catch(errHandler);
   const json = await response.json();
-  return json.data[0].is_live;
+  console.log(json);
+  return await json.data[0].is_live;
 };
 
 const addNewViewers = async () => {

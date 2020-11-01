@@ -2,6 +2,7 @@ const express = require("express");
 const fetch = require("isomorphic-fetch");
 const cron = require("node-cron");
 const dotenv = require("dotenv");
+const moment = require("moment-timezone");
 
 dotenv.config();
 
@@ -82,13 +83,8 @@ const addNewViewers = async () => {
     global_mods,
     viewers
   );
-  const today = formatter.format(
-    new Date(
-      new Date().getFullYear(),
-      new Date().getMonth(),
-      new Date().getDate()
-    ).getTime()
-  );
+  const today = moment().tz("America/New_York").format("YYYY-MM-DD");
+
   // schedule timer
   // get all the viewers in the DB
   const allViewersObject = await Viewer.findAll({
@@ -105,17 +101,10 @@ const addNewViewers = async () => {
     }).catch(errHandler);
 
     if (viewer) {
-      const lastWatchDate = formatter.format(
-        new Date(
-          new Date(viewer.lastWatchDate).getFullYear(),
-          new Date(viewer.lastWatchDate).getMonth(),
-          new Date(viewer.lastWatchDate).getDate()
-        ).getTime()
-      );
+      const lastWatchDate = moment(viewer.lastWatchDate).format("YYYY-MM-DD");
 
       if (today !== lastWatchDate) {
         viewer.lastWatchDate = today;
-        viewer.canVote = true;
         console.log("-----------------------UPDATED VIEWER-------------------");
         console.log(viewer);
         console.log("--------------------------------------------------------");
@@ -142,9 +131,4 @@ const errHandler = (err) => {
   console.log("Error: ", err);
 };
 
-const formatter = new Intl.DateTimeFormat("en-us", {
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-});
 module.exports = router;

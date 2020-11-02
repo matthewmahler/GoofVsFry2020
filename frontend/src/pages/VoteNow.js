@@ -171,7 +171,9 @@ const VoteNow = () => {
       return params;
     }
     setParams(getSearchParameters());
-    setIsBetween(moment(today).isBetween('2020-11-03', '2020-11-17'));
+    setIsBetween(
+      moment(today).isBetween('2020-11-03', '2020-11-17', undefined, [])
+    );
     setMessage(
       isBetween
         ? 'Voting is now open until 11/17/2020, may the best chair... I mean candidate win :D'

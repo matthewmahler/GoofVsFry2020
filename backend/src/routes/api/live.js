@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 });
 
 const ping = cron.schedule(
-  "*/2 * * * *",
+  "*/10 * * * *",
   async () => {
     let isLive = await checkIfLive();
     console.log(`Is Live: ${isLive}`);

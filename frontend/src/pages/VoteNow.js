@@ -212,52 +212,52 @@ const VoteNow = () => {
       const lastVoteDate = viewer.lastVoteDate;
       const lastWatchDate = viewer.lastWatchDate;
 
-      // if (!isBetween) {
-      // they have voted already today
-      if (today === lastVoteDate) {
-        console.log(`User: ${viewer.username} has already voted today`);
-        console.log({ today, lastVoteDate });
-        setCanVote(false);
-        setError(`User: ${viewer.username} has already voted today`);
-        const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
-        fetchUrl(votesURL, null, setVotes);
-      } else if (
-        // they have voted before, but not today, but they didnt watch today
-        today !== lastVoteDate &&
-        today !== lastWatchDate &&
-        lastVoteDate !== null
-      ) {
-        console.log(
-          `User: ${viewer.username} has voted previously, but did not watch the stream today`
-        );
-        console.log({ today, lastVoteDate, lastWatchDate });
-        setError(
-          `User: ${viewer.username} has voted previously, but did not watch the stream today`
-        );
-        setCanVote(false);
-      } else if (today !== lastVoteDate && today === lastWatchDate) {
-        console.log(`User: ${viewer.username} has never voted. ENJOY!`);
-        setError(
-          `User: ${viewer.username} has watched today! Enjoy your vote!`
-        );
-        setCanVote(true);
-      } else if (
-        // user has never voted
-        lastVoteDate === null
-      ) {
-        console.log(`User: ${viewer.username} has never voted. ENJOY!`);
-        setError(`User: ${viewer.username} has never voted. ENJOY!`);
-        setCanVote(true);
-      } else {
-        console.log('IDK WHAT HAPPENED');
-        console.log({ today, lastVoteDate, lastWatchDate });
-        setError('IDK WHAT HAPPENED');
-        setCanVote(false);
+      if (!isBetween) {
+        // they have voted already today
+        if (today === lastVoteDate) {
+          console.log(`User: ${viewer.username} has already voted today`);
+          console.log({ today, lastVoteDate });
+          setCanVote(false);
+          setError(`User: ${viewer.username} has already voted today`);
+          const votesURL = `${process.env.GATSBY_BACKEND_HOST}api/votes/${user.sub}`;
+          fetchUrl(votesURL, null, setVotes);
+        } else if (
+          // they have voted before, but not today, but they didnt watch today
+          today !== lastVoteDate &&
+          today !== lastWatchDate &&
+          lastVoteDate !== null
+        ) {
+          console.log(
+            `User: ${viewer.username} has voted previously, but did not watch the stream today`
+          );
+          console.log({ today, lastVoteDate, lastWatchDate });
+          setError(
+            `User: ${viewer.username} has voted previously, but did not watch the stream today`
+          );
+          setCanVote(false);
+        } else if (today !== lastVoteDate && today === lastWatchDate) {
+          console.log(`User: ${viewer.username} has never voted. ENJOY!`);
+          setError(
+            `User: ${viewer.username} has watched today! Enjoy your vote!`
+          );
+          setCanVote(true);
+        } else if (
+          // user has never voted
+          lastVoteDate === null
+        ) {
+          console.log(`User: ${viewer.username} has never voted. ENJOY!`);
+          setError(`User: ${viewer.username} has never voted. ENJOY!`);
+          setCanVote(true);
+        } else {
+          console.log('IDK WHAT HAPPENED');
+          console.log({ today, lastVoteDate, lastWatchDate });
+          setError('IDK WHAT HAPPENED');
+          setCanVote(false);
+        }
       }
+    } else {
+      setError('Voting is closed, please vist the results page');
     }
-    // } else {
-    //   setError('Voting is closed, please vist the results page');
-    // }
   }, [params, user, viewer]);
 
   // vote function

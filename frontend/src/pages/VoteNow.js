@@ -214,7 +214,7 @@ const VoteNow = () => {
       const lastVoteDate = viewer.lastVoteDate;
       const lastWatchDate = viewer.lastWatchDate;
 
-      if (!isBetween) {
+      if (isBetween) {
         // they have voted already today
         if (today === lastVoteDate) {
           console.log(`User: ${viewer.username} has already voted today`);

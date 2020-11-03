@@ -122,7 +122,6 @@ const VoteNow = () => {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState(null);
   const [chairPosition, setChairPosition] = useState({ x: 0, y: 0 });
-  const [isBetween, setIsBetween] = useState(false);
   let [width, height] = useWindowSize();
   // get global context
   const {
@@ -140,7 +139,12 @@ const VoteNow = () => {
 
   //get todays date minus the timestamp
   const today = moment().format('YYYY-MM-DD');
-
+  const isBetween = moment(today).isBetween(
+    '2020-11-03',
+    '2020-11-17',
+    undefined,
+    []
+  );
   // reusable fetch function
   async function fetchUrl(url, options, set) {
     const response = await fetch(url, options);
@@ -171,9 +175,7 @@ const VoteNow = () => {
       return params;
     }
     setParams(getSearchParameters());
-    setIsBetween(
-      moment(today).isBetween('2020-11-03', '2020-11-17', undefined, [])
-    );
+
     setMessage(
       isBetween
         ? 'Voting is now open until 11/17/2020, may the best chair... I mean candidate win :D'

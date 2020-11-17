@@ -136,7 +136,7 @@ const Results = () => {
   const [lineChartData, setLineChartData] = useState(null);
   const [pieChartData, setPieChartData] = useState(null);
   const [leaderBoard, setLeaderBoard] = useState(null);
-  const [showChair, setShowChair] = useState(false);
+  const [showChair, setShowChair] = useState(true);
   const [chairCount, setChairCount] = useState(0);
 
   const {
@@ -314,7 +314,7 @@ const Results = () => {
     setLineChartData(tempArr);
   };
 
-  const colors = ['#FF5A50', '#5768FF', '#91f573'];
+  const colors = ['#FF5A50', '#5768FF', '#28a303'];
   return (
     <Layout>
       <Container>

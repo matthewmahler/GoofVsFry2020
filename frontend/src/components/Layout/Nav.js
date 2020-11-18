@@ -115,9 +115,6 @@ const Nav = () => {
           <Link to="/">Election 2020</Link>
         </motion.h1>
         <motion.ul variants={ulVariants}>
-          <motion.li variants={liVariants}>
-            <a href={url}>Vote Now</a>
-          </motion.li>
           {navItems.map((item, key) => {
             return (
               <motion.li variants={liVariants} key={key}>

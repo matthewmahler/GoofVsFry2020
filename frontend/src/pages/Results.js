@@ -18,6 +18,7 @@ import {
 import { faChair } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { context } from '../Context/provider';
+import final from '../components/finalResults.json';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -166,12 +167,6 @@ const Results = () => {
     setChairCount(tempChair);
   };
 
-  async function fetchUrl(url, options, set) {
-    const response = await fetch(url, options);
-    const json = await response.json();
-    set(json);
-  }
-
   const compileLeaderBoard = (arr) => {
     let mapping = {};
     let counter = 0;
@@ -202,8 +197,7 @@ const Results = () => {
   };
 
   useEffect(() => {
-    const url = `${process.env.GATSBY_BACKEND_HOST}api/votes`;
-    fetchUrl(url, null, setVotes);
+    setVotes(final);
   }, []);
   useEffect(() => {
     if (votes) {

@@ -1,0 +1,2711 @@
+[
+  {
+    "userId": 125359491,
+    "username": "acewright4",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 17692,
+    "createdAt": "2020-11-03 14:28:48",
+    "updatedAt": "2020-11-03 14:28:48"
+  },
+  {
+    "userId": 198393655,
+    "username": "aluniottv",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 54256,
+    "createdAt": "2020-11-17 16:54:57",
+    "updatedAt": "2020-11-17 16:54:57"
+  },
+  {
+    "userId": 63723575,
+    "username": "BigManMSU",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 39819,
+    "createdAt": "2020-11-11 18:33:52",
+    "updatedAt": "2020-11-11 18:33:52"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 78543,
+    "createdAt": "2020-11-03 14:34:59",
+    "updatedAt": "2020-11-03 14:34:59"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 62304,
+    "createdAt": "2020-11-05 18:07:13",
+    "updatedAt": "2020-11-05 18:07:13"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 25035,
+    "createdAt": "2020-11-05 20:06:02",
+    "updatedAt": "2020-11-05 20:06:02"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 2440,
+    "createdAt": "2020-11-05 20:06:02",
+    "updatedAt": "2020-11-05 20:06:02"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 25765,
+    "createdAt": "2020-11-06 18:14:36",
+    "updatedAt": "2020-11-06 18:14:36"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 17649,
+    "createdAt": "2020-11-09 16:51:40",
+    "updatedAt": "2020-11-09 16:51:40"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 40860,
+    "createdAt": "2020-11-10 18:03:52",
+    "updatedAt": "2020-11-10 18:03:52"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 66063,
+    "createdAt": "2020-11-10 18:04:05",
+    "updatedAt": "2020-11-10 18:04:05"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 82694,
+    "createdAt": "2020-11-10 18:04:05",
+    "updatedAt": "2020-11-10 18:04:05"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 19484,
+    "createdAt": "2020-11-10 18:04:05",
+    "updatedAt": "2020-11-10 18:04:05"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 62117,
+    "createdAt": "2020-11-10 18:05:06",
+    "updatedAt": "2020-11-10 18:05:06"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 77051,
+    "createdAt": "2020-11-10 18:06:07",
+    "updatedAt": "2020-11-10 18:06:07"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 82851,
+    "createdAt": "2020-11-10 19:30:32",
+    "updatedAt": "2020-11-10 19:30:32"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 71832,
+    "createdAt": "2020-11-10 19:30:33",
+    "updatedAt": "2020-11-10 19:30:33"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 18160,
+    "createdAt": "2020-11-10 19:31:45",
+    "updatedAt": "2020-11-10 19:31:45"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 9514,
+    "createdAt": "2020-11-10 19:34:30",
+    "updatedAt": "2020-11-10 19:34:30"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 83287,
+    "createdAt": "2020-11-10 19:34:30",
+    "updatedAt": "2020-11-10 19:34:30"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 64371,
+    "createdAt": "2020-11-11 17:31:06",
+    "updatedAt": "2020-11-11 17:31:06"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 25636,
+    "createdAt": "2020-11-12 22:46:41",
+    "updatedAt": "2020-11-12 22:46:41"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 13231,
+    "createdAt": "2020-11-13 18:24:48",
+    "updatedAt": "2020-11-13 18:24:48"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 16111,
+    "createdAt": "2020-11-16 18:21:10",
+    "updatedAt": "2020-11-16 18:21:10"
+  },
+  {
+    "userId": 108274555,
+    "username": "blkbelt",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 79007,
+    "createdAt": "2020-11-17 19:16:55",
+    "updatedAt": "2020-11-17 19:16:55"
+  },
+  {
+    "userId": 194783945,
+    "username": "CallEmDad",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 64932,
+    "createdAt": "2020-11-05 16:04:49",
+    "updatedAt": "2020-11-05 16:04:49"
+  },
+  {
+    "userId": 194783945,
+    "username": "CallEmDad",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 78232,
+    "createdAt": "2020-11-09 16:33:04",
+    "updatedAt": "2020-11-09 16:33:04"
+  },
+  {
+    "userId": 194783945,
+    "username": "CallEmDad",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 35668,
+    "createdAt": "2020-11-13 18:32:03",
+    "updatedAt": "2020-11-13 18:32:03"
+  },
+  {
+    "userId": 194783945,
+    "username": "CallEmDad",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 25335,
+    "createdAt": "2020-11-16 17:02:29",
+    "updatedAt": "2020-11-16 17:02:29"
+  },
+  {
+    "userId": 194783945,
+    "username": "CallEmDad",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 9113,
+    "createdAt": "2020-11-17 16:37:48",
+    "updatedAt": "2020-11-17 16:37:48"
+  },
+  {
+    "userId": 55697192,
+    "username": "Canexi",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 80110,
+    "createdAt": "2020-11-06 18:42:46",
+    "updatedAt": "2020-11-06 18:42:46"
+  },
+  {
+    "userId": 55697192,
+    "username": "Canexi",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 94987,
+    "createdAt": "2020-11-16 16:52:13",
+    "updatedAt": "2020-11-16 16:52:13"
+  },
+  {
+    "userId": 200164585,
+    "username": "carnagexqueen",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 88110,
+    "createdAt": "2020-11-05 17:40:36",
+    "updatedAt": "2020-11-05 17:40:36"
+  },
+  {
+    "userId": 92835542,
+    "username": "ChrisCage89",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 99806,
+    "createdAt": "2020-11-04 02:42:15",
+    "updatedAt": "2020-11-04 02:42:15"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 55091,
+    "createdAt": "2020-11-03 14:34:52",
+    "updatedAt": "2020-11-03 14:34:52"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-03",
+    "candidate": "Chair",
+    "voteId": 76039,
+    "createdAt": "2020-11-03 14:36:01",
+    "updatedAt": "2020-11-03 14:36:01"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 28982,
+    "createdAt": "2020-11-05 16:34:24",
+    "updatedAt": "2020-11-05 16:34:24"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 66471,
+    "createdAt": "2020-11-06 18:38:49",
+    "updatedAt": "2020-11-06 18:38:49"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 28066,
+    "createdAt": "2020-11-09 16:52:02",
+    "updatedAt": "2020-11-09 16:52:02"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-09",
+    "candidate": "Chair",
+    "voteId": 3817,
+    "createdAt": "2020-11-09 16:52:45",
+    "updatedAt": "2020-11-09 16:52:45"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-09",
+    "candidate": "Chair",
+    "voteId": 66746,
+    "createdAt": "2020-11-09 16:52:45",
+    "updatedAt": "2020-11-09 16:52:45"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 42930,
+    "createdAt": "2020-11-10 19:57:19",
+    "updatedAt": "2020-11-10 19:57:19"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 30925,
+    "createdAt": "2020-11-12 16:40:19",
+    "updatedAt": "2020-11-12 16:40:19"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-13",
+    "candidate": "Fry",
+    "voteId": 58589,
+    "createdAt": "2020-11-13 18:32:01",
+    "updatedAt": "2020-11-13 18:32:01"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 64728,
+    "createdAt": "2020-11-16 16:29:18",
+    "updatedAt": "2020-11-16 16:29:18"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 72671,
+    "createdAt": "2020-11-16 16:31:31",
+    "updatedAt": "2020-11-16 16:31:31"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 78137,
+    "createdAt": "2020-11-16 16:31:31",
+    "updatedAt": "2020-11-16 16:31:31"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 50573,
+    "createdAt": "2020-11-16 16:32:29",
+    "updatedAt": "2020-11-16 16:32:29"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 58554,
+    "createdAt": "2020-11-16 16:32:29",
+    "updatedAt": "2020-11-16 16:32:29"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 22735,
+    "createdAt": "2020-11-16 16:32:30",
+    "updatedAt": "2020-11-16 16:32:30"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 90337,
+    "createdAt": "2020-11-16 16:32:58",
+    "updatedAt": "2020-11-16 16:32:58"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 37873,
+    "createdAt": "2020-11-16 16:32:59",
+    "updatedAt": "2020-11-16 16:32:59"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 90206,
+    "createdAt": "2020-11-16 16:34:14",
+    "updatedAt": "2020-11-16 16:34:14"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 3567,
+    "createdAt": "2020-11-16 16:34:14",
+    "updatedAt": "2020-11-16 16:34:14"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 49769,
+    "createdAt": "2020-11-16 16:35:21",
+    "updatedAt": "2020-11-16 16:35:21"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 92929,
+    "createdAt": "2020-11-16 16:35:22",
+    "updatedAt": "2020-11-16 16:35:22"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 99683,
+    "createdAt": "2020-11-16 16:35:55",
+    "updatedAt": "2020-11-16 16:35:55"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 44957,
+    "createdAt": "2020-11-17 16:54:52",
+    "updatedAt": "2020-11-17 16:54:52"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 40762,
+    "createdAt": "2020-11-17 16:55:16",
+    "updatedAt": "2020-11-17 16:55:16"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 83999,
+    "createdAt": "2020-11-17 16:56:30",
+    "updatedAt": "2020-11-17 16:56:30"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 98003,
+    "createdAt": "2020-11-17 16:56:43",
+    "updatedAt": "2020-11-17 16:56:43"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 61455,
+    "createdAt": "2020-11-17 16:56:59",
+    "updatedAt": "2020-11-17 16:56:59"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 40004,
+    "createdAt": "2020-11-17 16:57:13",
+    "updatedAt": "2020-11-17 16:57:13"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 24299,
+    "createdAt": "2020-11-17 16:57:13",
+    "updatedAt": "2020-11-17 16:57:13"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 35825,
+    "createdAt": "2020-11-17 16:57:28",
+    "updatedAt": "2020-11-17 16:57:28"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 15383,
+    "createdAt": "2020-11-17 16:57:29",
+    "updatedAt": "2020-11-17 16:57:29"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 33076,
+    "createdAt": "2020-11-17 16:57:40",
+    "updatedAt": "2020-11-17 16:57:40"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 91058,
+    "createdAt": "2020-11-17 16:57:40",
+    "updatedAt": "2020-11-17 16:57:40"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 94265,
+    "createdAt": "2020-11-17 16:57:40",
+    "updatedAt": "2020-11-17 16:57:40"
+  },
+  {
+    "userId": 582142322,
+    "username": "clarkh58",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 53665,
+    "createdAt": "2020-11-17 16:58:01",
+    "updatedAt": "2020-11-17 16:58:01"
+  },
+  {
+    "userId": 608548941,
+    "username": "crazy_cow006",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 88924,
+    "createdAt": "2020-11-17 16:12:41",
+    "updatedAt": "2020-11-17 16:12:41"
+  },
+  {
+    "userId": 32305525,
+    "username": "CynicalSky",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 70584,
+    "createdAt": "2020-11-10 18:28:34",
+    "updatedAt": "2020-11-10 18:28:34"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 50374,
+    "createdAt": "2020-11-03 14:29:29",
+    "updatedAt": "2020-11-03 14:29:29"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 51669,
+    "createdAt": "2020-11-05 16:47:56",
+    "updatedAt": "2020-11-05 16:47:56"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 43320,
+    "createdAt": "2020-11-06 18:27:34",
+    "updatedAt": "2020-11-06 18:27:34"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 26791,
+    "createdAt": "2020-11-09 16:51:40",
+    "updatedAt": "2020-11-09 16:51:40"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 93788,
+    "createdAt": "2020-11-10 18:16:28",
+    "updatedAt": "2020-11-10 18:16:28"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 87952,
+    "createdAt": "2020-11-13 18:21:31",
+    "updatedAt": "2020-11-13 18:21:31"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 92620,
+    "createdAt": "2020-11-16 17:39:02",
+    "updatedAt": "2020-11-16 17:39:02"
+  },
+  {
+    "userId": 196603117,
+    "username": "Daddigeb",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 2476,
+    "createdAt": "2020-11-17 16:37:51",
+    "updatedAt": "2020-11-17 16:37:51"
+  },
+  {
+    "userId": 67618998,
+    "username": "Daymo_32",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 58182,
+    "createdAt": "2020-11-03 23:25:09",
+    "updatedAt": "2020-11-03 23:25:09"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 67054,
+    "createdAt": "2020-11-03 14:30:31",
+    "updatedAt": "2020-11-03 14:30:31"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-03",
+    "candidate": "Chair",
+    "voteId": 35991,
+    "createdAt": "2020-11-03 14:31:34",
+    "updatedAt": "2020-11-03 14:31:34"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 57448,
+    "createdAt": "2020-11-05 17:03:08",
+    "updatedAt": "2020-11-05 17:03:08"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 8630,
+    "createdAt": "2020-11-06 18:45:58",
+    "updatedAt": "2020-11-06 18:45:58"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 83213,
+    "createdAt": "2020-11-09 16:11:10",
+    "updatedAt": "2020-11-09 16:11:10"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 26713,
+    "createdAt": "2020-11-10 18:03:26",
+    "updatedAt": "2020-11-10 18:03:26"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 30852,
+    "createdAt": "2020-11-10 18:07:52",
+    "updatedAt": "2020-11-10 18:07:52"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 18285,
+    "createdAt": "2020-11-10 18:08:09",
+    "updatedAt": "2020-11-10 18:08:09"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 28952,
+    "createdAt": "2020-11-10 18:08:17",
+    "updatedAt": "2020-11-10 18:08:17"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 53674,
+    "createdAt": "2020-11-10 18:08:28",
+    "updatedAt": "2020-11-10 18:08:28"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 80780,
+    "createdAt": "2020-11-10 18:08:33",
+    "updatedAt": "2020-11-10 18:08:33"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 57864,
+    "createdAt": "2020-11-10 18:08:39",
+    "updatedAt": "2020-11-10 18:08:39"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 26644,
+    "createdAt": "2020-11-10 18:08:43",
+    "updatedAt": "2020-11-10 18:08:43"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 16318,
+    "createdAt": "2020-11-10 18:08:48",
+    "updatedAt": "2020-11-10 18:08:48"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 52845,
+    "createdAt": "2020-11-10 18:08:52",
+    "updatedAt": "2020-11-10 18:08:52"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 11483,
+    "createdAt": "2020-11-10 18:08:56",
+    "updatedAt": "2020-11-10 18:08:56"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 27649,
+    "createdAt": "2020-11-10 18:15:09",
+    "updatedAt": "2020-11-10 18:15:09"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 77494,
+    "createdAt": "2020-11-10 18:15:17",
+    "updatedAt": "2020-11-10 18:15:17"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 45541,
+    "createdAt": "2020-11-10 18:15:21",
+    "updatedAt": "2020-11-10 18:15:21"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 80956,
+    "createdAt": "2020-11-10 18:15:52",
+    "updatedAt": "2020-11-10 18:15:52"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 26647,
+    "createdAt": "2020-11-10 18:15:59",
+    "updatedAt": "2020-11-10 18:15:59"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 96660,
+    "createdAt": "2020-11-10 18:16:06",
+    "updatedAt": "2020-11-10 18:16:06"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 74284,
+    "createdAt": "2020-11-16 17:38:57",
+    "updatedAt": "2020-11-16 17:38:57"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 12844,
+    "createdAt": "2020-11-16 17:42:25",
+    "updatedAt": "2020-11-16 17:42:25"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 57161,
+    "createdAt": "2020-11-16 17:42:28",
+    "updatedAt": "2020-11-16 17:42:28"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 31649,
+    "createdAt": "2020-11-16 17:42:32",
+    "updatedAt": "2020-11-16 17:42:32"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 35534,
+    "createdAt": "2020-11-16 17:42:36",
+    "updatedAt": "2020-11-16 17:42:36"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 71951,
+    "createdAt": "2020-11-16 17:42:39",
+    "updatedAt": "2020-11-16 17:42:39"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 44172,
+    "createdAt": "2020-11-16 17:42:41",
+    "updatedAt": "2020-11-16 17:42:41"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 35738,
+    "createdAt": "2020-11-16 17:42:46",
+    "updatedAt": "2020-11-16 17:42:46"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 38999,
+    "createdAt": "2020-11-16 17:42:49",
+    "updatedAt": "2020-11-16 17:42:49"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 88238,
+    "createdAt": "2020-11-16 17:42:54",
+    "updatedAt": "2020-11-16 17:42:54"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 70077,
+    "createdAt": "2020-11-16 17:42:58",
+    "updatedAt": "2020-11-16 17:42:58"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 90823,
+    "createdAt": "2020-11-16 17:43:01",
+    "updatedAt": "2020-11-16 17:43:01"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 54002,
+    "createdAt": "2020-11-16 17:43:05",
+    "updatedAt": "2020-11-16 17:43:05"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 31076,
+    "createdAt": "2020-11-16 17:43:09",
+    "updatedAt": "2020-11-16 17:43:09"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 58836,
+    "createdAt": "2020-11-16 17:43:12",
+    "updatedAt": "2020-11-16 17:43:12"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 2242,
+    "createdAt": "2020-11-16 17:43:14",
+    "updatedAt": "2020-11-16 17:43:14"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 51122,
+    "createdAt": "2020-11-16 17:43:18",
+    "updatedAt": "2020-11-16 17:43:18"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 73866,
+    "createdAt": "2020-11-16 17:43:21",
+    "updatedAt": "2020-11-16 17:43:21"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 66361,
+    "createdAt": "2020-11-16 17:44:52",
+    "updatedAt": "2020-11-16 17:44:52"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 22798,
+    "createdAt": "2020-11-16 17:44:56",
+    "updatedAt": "2020-11-16 17:44:56"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 90328,
+    "createdAt": "2020-11-16 17:44:59",
+    "updatedAt": "2020-11-16 17:44:59"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 86811,
+    "createdAt": "2020-11-16 17:45:02",
+    "updatedAt": "2020-11-16 17:45:02"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 91519,
+    "createdAt": "2020-11-16 17:45:07",
+    "updatedAt": "2020-11-16 17:45:07"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 17376,
+    "createdAt": "2020-11-16 17:45:11",
+    "updatedAt": "2020-11-16 17:45:11"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 58175,
+    "createdAt": "2020-11-16 17:45:14",
+    "updatedAt": "2020-11-16 17:45:14"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 63878,
+    "createdAt": "2020-11-16 17:45:18",
+    "updatedAt": "2020-11-16 17:45:18"
+  },
+  {
+    "userId": 43627791,
+    "username": "Drakon519",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 49920,
+    "createdAt": "2020-11-17 18:28:16",
+    "updatedAt": "2020-11-17 18:28:16"
+  },
+  {
+    "userId": 549270435,
+    "username": "drfire3782",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 81523,
+    "createdAt": "2020-11-06 18:06:26",
+    "updatedAt": "2020-11-06 18:06:26"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 87068,
+    "createdAt": "2020-11-03 15:36:41",
+    "updatedAt": "2020-11-03 15:36:41"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 15478,
+    "createdAt": "2020-11-05 16:23:09",
+    "updatedAt": "2020-11-05 16:23:09"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 46126,
+    "createdAt": "2020-11-06 18:14:31",
+    "updatedAt": "2020-11-06 18:14:31"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 77775,
+    "createdAt": "2020-11-09 16:12:51",
+    "updatedAt": "2020-11-09 16:12:51"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 8127,
+    "createdAt": "2020-11-11 16:20:47",
+    "updatedAt": "2020-11-11 16:20:47"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-12",
+    "candidate": "Fry",
+    "voteId": 1583,
+    "createdAt": "2020-11-12 16:20:30",
+    "updatedAt": "2020-11-12 16:20:30"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-13",
+    "candidate": "Fry",
+    "voteId": 53528,
+    "createdAt": "2020-11-13 18:24:58",
+    "updatedAt": "2020-11-13 18:24:58"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 39646,
+    "createdAt": "2020-11-16 16:28:38",
+    "updatedAt": "2020-11-16 16:28:38"
+  },
+  {
+    "userId": 447133360,
+    "username": "Dyno_OW1",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 51211,
+    "createdAt": "2020-11-17 16:54:46",
+    "updatedAt": "2020-11-17 16:54:46"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 67620,
+    "createdAt": "2020-11-03 14:29:27",
+    "updatedAt": "2020-11-03 14:29:27"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 37919,
+    "createdAt": "2020-11-05 16:20:32",
+    "updatedAt": "2020-11-05 16:20:32"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 36983,
+    "createdAt": "2020-11-05 20:32:42",
+    "updatedAt": "2020-11-05 20:32:42"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 48263,
+    "createdAt": "2020-11-05 20:32:46",
+    "updatedAt": "2020-11-05 20:32:46"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 27015,
+    "createdAt": "2020-11-05 20:32:48",
+    "updatedAt": "2020-11-05 20:32:48"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 22745,
+    "createdAt": "2020-11-05 20:34:16",
+    "updatedAt": "2020-11-05 20:34:16"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-05",
+    "candidate": "Chair",
+    "voteId": 60993,
+    "createdAt": "2020-11-05 20:34:21",
+    "updatedAt": "2020-11-05 20:34:21"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 48705,
+    "createdAt": "2020-11-06 18:15:07",
+    "updatedAt": "2020-11-06 18:15:07"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 6750,
+    "createdAt": "2020-11-10 16:47:30",
+    "updatedAt": "2020-11-10 16:47:30"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 34141,
+    "createdAt": "2020-11-10 16:47:35",
+    "updatedAt": "2020-11-10 16:47:35"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 28368,
+    "createdAt": "2020-11-10 16:47:45",
+    "updatedAt": "2020-11-10 16:47:45"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 81494,
+    "createdAt": "2020-11-10 16:47:52",
+    "updatedAt": "2020-11-10 16:47:52"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 36766,
+    "createdAt": "2020-11-10 16:47:53",
+    "updatedAt": "2020-11-10 16:47:53"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 32914,
+    "createdAt": "2020-11-10 16:47:53",
+    "updatedAt": "2020-11-10 16:47:53"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 44058,
+    "createdAt": "2020-11-10 16:47:54",
+    "updatedAt": "2020-11-10 16:47:54"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 3175,
+    "createdAt": "2020-11-10 16:47:54",
+    "updatedAt": "2020-11-10 16:47:54"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 94773,
+    "createdAt": "2020-11-10 16:47:54",
+    "updatedAt": "2020-11-10 16:47:54"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 37934,
+    "createdAt": "2020-11-10 16:47:55",
+    "updatedAt": "2020-11-10 16:47:55"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 59969,
+    "createdAt": "2020-11-10 16:47:55",
+    "updatedAt": "2020-11-10 16:47:55"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 76511,
+    "createdAt": "2020-11-10 16:47:56",
+    "updatedAt": "2020-11-10 16:47:56"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 51178,
+    "createdAt": "2020-11-10 16:47:56",
+    "updatedAt": "2020-11-10 16:47:56"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 37612,
+    "createdAt": "2020-11-10 16:47:56",
+    "updatedAt": "2020-11-10 16:47:56"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-10",
+    "candidate": "Chair",
+    "voteId": 50821,
+    "createdAt": "2020-11-10 16:47:57",
+    "updatedAt": "2020-11-10 16:47:57"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 66704,
+    "createdAt": "2020-11-11 16:20:49",
+    "updatedAt": "2020-11-11 16:20:49"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-12",
+    "candidate": "Fry",
+    "voteId": 68724,
+    "createdAt": "2020-11-12 16:12:37",
+    "updatedAt": "2020-11-12 16:12:37"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-13",
+    "candidate": "Fry",
+    "voteId": 91529,
+    "createdAt": "2020-11-13 19:22:11",
+    "updatedAt": "2020-11-13 19:22:11"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-15",
+    "candidate": "Fry",
+    "voteId": 29929,
+    "createdAt": "2020-11-15 21:52:42",
+    "updatedAt": "2020-11-15 21:52:42"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 50083,
+    "createdAt": "2020-11-16 16:51:06",
+    "updatedAt": "2020-11-16 16:51:06"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 20190,
+    "createdAt": "2020-11-17 02:52:32",
+    "updatedAt": "2020-11-17 02:52:32"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 47882,
+    "createdAt": "2020-11-17 02:52:35",
+    "updatedAt": "2020-11-17 02:52:35"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 67871,
+    "createdAt": "2020-11-17 02:52:36",
+    "updatedAt": "2020-11-17 02:52:36"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 3734,
+    "createdAt": "2020-11-17 02:52:36",
+    "updatedAt": "2020-11-17 02:52:36"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 2872,
+    "createdAt": "2020-11-17 02:52:36",
+    "updatedAt": "2020-11-17 02:52:36"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 71295,
+    "createdAt": "2020-11-17 02:52:37",
+    "updatedAt": "2020-11-17 02:52:37"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 92347,
+    "createdAt": "2020-11-17 02:52:37",
+    "updatedAt": "2020-11-17 02:52:37"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 61914,
+    "createdAt": "2020-11-17 02:52:38",
+    "updatedAt": "2020-11-17 02:52:38"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 15380,
+    "createdAt": "2020-11-17 02:52:38",
+    "updatedAt": "2020-11-17 02:52:38"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 16460,
+    "createdAt": "2020-11-17 02:52:38",
+    "updatedAt": "2020-11-17 02:52:38"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 24440,
+    "createdAt": "2020-11-17 02:52:39",
+    "updatedAt": "2020-11-17 02:52:39"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 51900,
+    "createdAt": "2020-11-17 02:52:39",
+    "updatedAt": "2020-11-17 02:52:39"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 73153,
+    "createdAt": "2020-11-17 02:52:40",
+    "updatedAt": "2020-11-17 02:52:40"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 12192,
+    "createdAt": "2020-11-17 02:52:40",
+    "updatedAt": "2020-11-17 02:52:40"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-16",
+    "candidate": "Chair",
+    "voteId": 66029,
+    "createdAt": "2020-11-17 02:52:40",
+    "updatedAt": "2020-11-17 02:52:40"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 67429,
+    "createdAt": "2020-11-17 14:39:49",
+    "updatedAt": "2020-11-17 14:39:49"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 66998,
+    "createdAt": "2020-11-17 14:40:02",
+    "updatedAt": "2020-11-17 14:40:02"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 29201,
+    "createdAt": "2020-11-17 14:40:05",
+    "updatedAt": "2020-11-17 14:40:05"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 49391,
+    "createdAt": "2020-11-17 14:40:05",
+    "updatedAt": "2020-11-17 14:40:05"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 5155,
+    "createdAt": "2020-11-17 14:40:06",
+    "updatedAt": "2020-11-17 14:40:06"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 83530,
+    "createdAt": "2020-11-17 14:40:06",
+    "updatedAt": "2020-11-17 14:40:06"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 74035,
+    "createdAt": "2020-11-17 14:40:07",
+    "updatedAt": "2020-11-17 14:40:07"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 3796,
+    "createdAt": "2020-11-17 14:40:07",
+    "updatedAt": "2020-11-17 14:40:07"
+  },
+  {
+    "userId": 47943682,
+    "username": "EmoMatt",
+    "voteDate": "2020-11-17",
+    "candidate": "Chair",
+    "voteId": 9095,
+    "createdAt": "2020-11-17 14:40:08",
+    "updatedAt": "2020-11-17 14:40:08"
+  },
+  {
+    "userId": 238905899,
+    "username": "FightingStego",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 51006,
+    "createdAt": "2020-11-03 20:04:56",
+    "updatedAt": "2020-11-03 20:04:56"
+  },
+  {
+    "userId": 238905899,
+    "username": "FightingStego",
+    "voteDate": "2020-11-15",
+    "candidate": "Fry",
+    "voteId": 58134,
+    "createdAt": "2020-11-15 21:53:44",
+    "updatedAt": "2020-11-15 21:53:44"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 97914,
+    "createdAt": "2020-11-03 14:28:05",
+    "updatedAt": "2020-11-03 14:28:05"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 15240,
+    "createdAt": "2020-11-05 16:24:15",
+    "updatedAt": "2020-11-05 16:24:15"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 74060,
+    "createdAt": "2020-11-06 19:36:34",
+    "updatedAt": "2020-11-06 19:36:34"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 99607,
+    "createdAt": "2020-11-09 16:36:38",
+    "updatedAt": "2020-11-09 16:36:38"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 68775,
+    "createdAt": "2020-11-10 18:02:08",
+    "updatedAt": "2020-11-10 18:02:08"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 28806,
+    "createdAt": "2020-11-11 16:44:32",
+    "updatedAt": "2020-11-11 16:44:32"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 13938,
+    "createdAt": "2020-11-13 18:25:01",
+    "updatedAt": "2020-11-13 18:25:01"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 34017,
+    "createdAt": "2020-11-16 17:49:18",
+    "updatedAt": "2020-11-16 17:49:18"
+  },
+  {
+    "userId": 130522868,
+    "username": "findland",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 58526,
+    "createdAt": "2020-11-17 17:33:46",
+    "updatedAt": "2020-11-17 17:33:46"
+  },
+  {
+    "userId": 199280762,
+    "username": "fishyyys",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 42724,
+    "createdAt": "2020-11-03 16:39:21",
+    "updatedAt": "2020-11-03 16:39:21"
+  },
+  {
+    "userId": 199280762,
+    "username": "fishyyys",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 78179,
+    "createdAt": "2020-11-05 16:47:51",
+    "updatedAt": "2020-11-05 16:47:51"
+  },
+  {
+    "userId": 199280762,
+    "username": "fishyyys",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 13717,
+    "createdAt": "2020-11-06 18:29:15",
+    "updatedAt": "2020-11-06 18:29:15"
+  },
+  {
+    "userId": 199280762,
+    "username": "fishyyys",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 56048,
+    "createdAt": "2020-11-09 16:51:58",
+    "updatedAt": "2020-11-09 16:51:58"
+  },
+  {
+    "userId": 199280762,
+    "username": "fishyyys",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 80581,
+    "createdAt": "2020-11-16 16:51:58",
+    "updatedAt": "2020-11-16 16:51:58"
+  },
+  {
+    "userId": 500397097,
+    "username": "godlygamerfell",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 50176,
+    "createdAt": "2020-11-06 18:04:15",
+    "updatedAt": "2020-11-06 18:04:15"
+  },
+  {
+    "userId": 500397097,
+    "username": "godlygamerfell",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 43073,
+    "createdAt": "2020-11-11 17:31:38",
+    "updatedAt": "2020-11-11 17:31:38"
+  },
+  {
+    "userId": 144827485,
+    "username": "gomtsbe",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 56030,
+    "createdAt": "2020-11-06 18:46:45",
+    "updatedAt": "2020-11-06 18:46:45"
+  },
+  {
+    "userId": 144827485,
+    "username": "gomtsbe",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 8688,
+    "createdAt": "2020-11-17 16:38:28",
+    "updatedAt": "2020-11-17 16:38:28"
+  },
+  {
+    "userId": 63406098,
+    "username": "GoofinAbout",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 95869,
+    "createdAt": "2020-11-09 15:55:51",
+    "updatedAt": "2020-11-09 15:55:51"
+  },
+  {
+    "userId": 63406098,
+    "username": "GoofinAbout",
+    "voteDate": "2020-11-11",
+    "candidate": "Chair",
+    "voteId": 79934,
+    "createdAt": "2020-11-11 21:11:12",
+    "updatedAt": "2020-11-11 21:11:12"
+  },
+  {
+    "userId": 503931082,
+    "username": "Hold_Slow",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 18675,
+    "createdAt": "2020-11-03 20:04:28",
+    "updatedAt": "2020-11-03 20:04:28"
+  },
+  {
+    "userId": 104536691,
+    "username": "ian50008",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 87556,
+    "createdAt": "2020-11-03 14:32:52",
+    "updatedAt": "2020-11-03 14:32:52"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 25095,
+    "createdAt": "2020-11-06 18:29:14",
+    "updatedAt": "2020-11-06 18:29:14"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 80304,
+    "createdAt": "2020-11-09 17:41:21",
+    "updatedAt": "2020-11-09 17:41:21"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 52514,
+    "createdAt": "2020-11-10 18:16:32",
+    "updatedAt": "2020-11-10 18:16:32"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 37008,
+    "createdAt": "2020-11-10 18:39:16",
+    "updatedAt": "2020-11-10 18:39:16"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 83857,
+    "createdAt": "2020-11-11 17:02:52",
+    "updatedAt": "2020-11-11 17:02:52"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-12",
+    "candidate": "Fry",
+    "voteId": 34290,
+    "createdAt": "2020-11-12 19:06:02",
+    "updatedAt": "2020-11-12 19:06:02"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 47526,
+    "createdAt": "2020-11-16 16:15:02",
+    "updatedAt": "2020-11-16 16:15:02"
+  },
+  {
+    "userId": 155292132,
+    "username": "ItsJustDomin",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 97533,
+    "createdAt": "2020-11-17 17:25:58",
+    "updatedAt": "2020-11-17 17:25:58"
+  },
+  {
+    "userId": 144177971,
+    "username": "lauren_gem",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 45935,
+    "createdAt": "2020-11-10 18:15:39",
+    "updatedAt": "2020-11-10 18:15:39"
+  },
+  {
+    "userId": 144177971,
+    "username": "lauren_gem",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 86497,
+    "createdAt": "2020-11-17 16:38:05",
+    "updatedAt": "2020-11-17 16:38:05"
+  },
+  {
+    "userId": 169656151,
+    "username": "LinithGrimm",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 51403,
+    "createdAt": "2020-11-03 20:56:46",
+    "updatedAt": "2020-11-03 20:56:46"
+  },
+  {
+    "userId": 169656151,
+    "username": "LinithGrimm",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 15505,
+    "createdAt": "2020-11-11 17:31:41",
+    "updatedAt": "2020-11-11 17:31:41"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 53984,
+    "createdAt": "2020-11-03 15:32:10",
+    "updatedAt": "2020-11-03 15:32:10"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 63014,
+    "createdAt": "2020-11-05 19:01:55",
+    "updatedAt": "2020-11-05 19:01:55"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 9983,
+    "createdAt": "2020-11-06 18:28:59",
+    "updatedAt": "2020-11-06 18:28:59"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 57509,
+    "createdAt": "2020-11-09 16:32:02",
+    "updatedAt": "2020-11-09 16:32:02"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 2761,
+    "createdAt": "2020-11-10 19:02:52",
+    "updatedAt": "2020-11-10 19:02:52"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 49859,
+    "createdAt": "2020-11-11 16:20:47",
+    "updatedAt": "2020-11-11 16:20:47"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 98464,
+    "createdAt": "2020-11-12 16:40:34",
+    "updatedAt": "2020-11-12 16:40:34"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 14182,
+    "createdAt": "2020-11-13 18:32:32",
+    "updatedAt": "2020-11-13 18:32:32"
+  },
+  {
+    "userId": 119397350,
+    "username": "LlamaPumaPants",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 98525,
+    "createdAt": "2020-11-16 16:29:48",
+    "updatedAt": "2020-11-16 16:29:48"
+  },
+  {
+    "userId": 48638341,
+    "username": "MekaZeth",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 44439,
+    "createdAt": "2020-11-12 19:24:29",
+    "updatedAt": "2020-11-12 19:24:29"
+  },
+  {
+    "userId": 453817618,
+    "username": "memz_vevo",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 8287,
+    "createdAt": "2020-11-11 17:31:20",
+    "updatedAt": "2020-11-11 17:31:20"
+  },
+  {
+    "userId": 453817618,
+    "username": "memz_vevo",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 62737,
+    "createdAt": "2020-11-12 16:20:43",
+    "updatedAt": "2020-11-12 16:20:43"
+  },
+  {
+    "userId": 453817618,
+    "username": "memz_vevo",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 16730,
+    "createdAt": "2020-11-16 22:55:33",
+    "updatedAt": "2020-11-16 22:55:33"
+  },
+  {
+    "userId": 453817618,
+    "username": "memz_vevo",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 48890,
+    "createdAt": "2020-11-17 17:34:15",
+    "updatedAt": "2020-11-17 17:34:15"
+  },
+  {
+    "userId": 277640564,
+    "username": "meowz_ttv",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 33814,
+    "createdAt": "2020-11-10 18:01:01",
+    "updatedAt": "2020-11-10 18:01:01"
+  },
+  {
+    "userId": 276227090,
+    "username": "monotone_metronome",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 47945,
+    "createdAt": "2020-11-17 16:13:05",
+    "updatedAt": "2020-11-17 16:13:05"
+  },
+  {
+    "userId": 153658911,
+    "username": "mostepicfailure",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 14105,
+    "createdAt": "2020-11-03 21:34:46",
+    "updatedAt": "2020-11-03 21:34:46"
+  },
+  {
+    "userId": 475138919,
+    "username": "Nich_XD",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 4824,
+    "createdAt": "2020-11-17 16:55:16",
+    "updatedAt": "2020-11-17 16:55:16"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 9792,
+    "createdAt": "2020-11-03 15:16:14",
+    "updatedAt": "2020-11-03 15:16:14"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 43514,
+    "createdAt": "2020-11-05 16:32:50",
+    "updatedAt": "2020-11-05 16:32:50"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 96384,
+    "createdAt": "2020-11-09 19:47:52",
+    "updatedAt": "2020-11-09 19:47:52"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 50344,
+    "createdAt": "2020-11-11 16:43:50",
+    "updatedAt": "2020-11-11 16:43:50"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-12",
+    "candidate": "Fry",
+    "voteId": 28896,
+    "createdAt": "2020-11-12 16:39:17",
+    "updatedAt": "2020-11-12 16:39:17"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-13",
+    "candidate": "Fry",
+    "voteId": 79461,
+    "createdAt": "2020-11-13 18:31:42",
+    "updatedAt": "2020-11-13 18:31:42"
+  },
+  {
+    "userId": 106140957,
+    "username": "NotThatGood42",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 69779,
+    "createdAt": "2020-11-17 01:51:14",
+    "updatedAt": "2020-11-17 01:51:14"
+  },
+  {
+    "userId": 164872947,
+    "username": "OneBigFry",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 99449,
+    "createdAt": "2020-11-03 14:26:33",
+    "updatedAt": "2020-11-03 14:26:33"
+  },
+  {
+    "userId": 164872947,
+    "username": "OneBigFry",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 92901,
+    "createdAt": "2020-11-06 18:12:08",
+    "updatedAt": "2020-11-06 18:12:08"
+  },
+  {
+    "userId": 164872947,
+    "username": "OneBigFry",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 16962,
+    "createdAt": "2020-11-09 16:32:38",
+    "updatedAt": "2020-11-09 16:32:38"
+  },
+  {
+    "userId": 164872947,
+    "username": "OneBigFry",
+    "voteDate": "2020-11-10",
+    "candidate": "Goof",
+    "voteId": 62780,
+    "createdAt": "2020-11-10 18:11:02",
+    "updatedAt": "2020-11-10 18:11:02"
+  },
+  {
+    "userId": 164872947,
+    "username": "OneBigFry",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 34605,
+    "createdAt": "2020-11-16 16:28:30",
+    "updatedAt": "2020-11-16 16:28:30"
+  },
+  {
+    "userId": 590855300,
+    "username": "owo_healer",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 84700,
+    "createdAt": "2020-11-05 19:20:13",
+    "updatedAt": "2020-11-05 19:20:13"
+  },
+  {
+    "userId": 162144693,
+    "username": "Paul434535",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 23684,
+    "createdAt": "2020-11-03 15:24:05",
+    "updatedAt": "2020-11-03 15:24:05"
+  },
+  {
+    "userId": 68672458,
+    "username": "RenovatioEx",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 79147,
+    "createdAt": "2020-11-11 16:50:29",
+    "updatedAt": "2020-11-11 16:50:29"
+  },
+  {
+    "userId": 68672458,
+    "username": "RenovatioEx",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 88367,
+    "createdAt": "2020-11-17 16:55:47",
+    "updatedAt": "2020-11-17 16:55:47"
+  },
+  {
+    "userId": 211340919,
+    "username": "rustybandit_",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 28124,
+    "createdAt": "2020-11-09 15:57:49",
+    "updatedAt": "2020-11-09 15:57:49"
+  },
+  {
+    "userId": 211340919,
+    "username": "rustybandit_",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 66372,
+    "createdAt": "2020-11-11 17:30:35",
+    "updatedAt": "2020-11-11 17:30:35"
+  },
+  {
+    "userId": 48352308,
+    "username": "seene3",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 39444,
+    "createdAt": "2020-11-06 18:05:21",
+    "updatedAt": "2020-11-06 18:05:21"
+  },
+  {
+    "userId": 48352308,
+    "username": "seene3",
+    "voteDate": "2020-11-09",
+    "candidate": "Fry",
+    "voteId": 82905,
+    "createdAt": "2020-11-09 16:25:44",
+    "updatedAt": "2020-11-09 16:25:44"
+  },
+  {
+    "userId": 48352308,
+    "username": "seene3",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 13038,
+    "createdAt": "2020-11-16 17:29:48",
+    "updatedAt": "2020-11-16 17:29:48"
+  },
+  {
+    "userId": 603471623,
+    "username": "skratchs_simp",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 54131,
+    "createdAt": "2020-11-10 18:31:30",
+    "updatedAt": "2020-11-10 18:31:30"
+  },
+  {
+    "userId": 603471623,
+    "username": "skratchs_simp",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 16912,
+    "createdAt": "2020-11-16 17:30:10",
+    "updatedAt": "2020-11-16 17:30:10"
+  },
+  {
+    "userId": 603471623,
+    "username": "skratchs_simp",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 28231,
+    "createdAt": "2020-11-17 16:56:48",
+    "updatedAt": "2020-11-17 16:56:48"
+  },
+  {
+    "userId": 125683501,
+    "username": "SmallMadi",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 8061,
+    "createdAt": "2020-11-05 19:21:07",
+    "updatedAt": "2020-11-05 19:21:07"
+  },
+  {
+    "userId": 125683501,
+    "username": "SmallMadi",
+    "voteDate": "2020-11-06",
+    "candidate": "Fry",
+    "voteId": 57788,
+    "createdAt": "2020-11-06 18:23:02",
+    "updatedAt": "2020-11-06 18:23:02"
+  },
+  {
+    "userId": 495959836,
+    "username": "somerandomgamer222",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 88807,
+    "createdAt": "2020-11-03 16:04:46",
+    "updatedAt": "2020-11-03 16:04:46"
+  },
+  {
+    "userId": 495959836,
+    "username": "somerandomgamer222",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 939,
+    "createdAt": "2020-11-13 19:41:11",
+    "updatedAt": "2020-11-13 19:41:11"
+  },
+  {
+    "userId": 169545631,
+    "username": "SparktUp",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 3754,
+    "createdAt": "2020-11-03 15:52:54",
+    "updatedAt": "2020-11-03 15:52:54"
+  },
+  {
+    "userId": 169545631,
+    "username": "SparktUp",
+    "voteDate": "2020-11-05",
+    "candidate": "Goof",
+    "voteId": 95317,
+    "createdAt": "2020-11-05 19:21:07",
+    "updatedAt": "2020-11-05 19:21:07"
+  },
+  {
+    "userId": 169545631,
+    "username": "SparktUp",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 10101,
+    "createdAt": "2020-11-11 21:10:06",
+    "updatedAt": "2020-11-11 21:10:06"
+  },
+  {
+    "userId": 224768188,
+    "username": "thatblakebox",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 37010,
+    "createdAt": "2020-11-03 16:04:55",
+    "updatedAt": "2020-11-03 16:04:55"
+  },
+  {
+    "userId": 542572569,
+    "username": "thatonebone_",
+    "voteDate": "2020-11-03",
+    "candidate": "Goof",
+    "voteId": 49774,
+    "createdAt": "2020-11-03 14:35:22",
+    "updatedAt": "2020-11-03 14:35:22"
+  },
+  {
+    "userId": 598028719,
+    "username": "TheInsectPerson",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 33453,
+    "createdAt": "2020-11-09 17:32:39",
+    "updatedAt": "2020-11-09 17:32:39"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 58845,
+    "createdAt": "2020-11-06 18:06:01",
+    "updatedAt": "2020-11-06 18:06:01"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 56797,
+    "createdAt": "2020-11-09 16:32:18",
+    "updatedAt": "2020-11-09 16:32:18"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-10",
+    "candidate": "Fry",
+    "voteId": 85401,
+    "createdAt": "2020-11-10 18:31:50",
+    "updatedAt": "2020-11-10 18:31:50"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 86955,
+    "createdAt": "2020-11-11 16:21:11",
+    "updatedAt": "2020-11-11 16:21:11"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-12",
+    "candidate": "Fry",
+    "voteId": 61149,
+    "createdAt": "2020-11-12 16:10:41",
+    "updatedAt": "2020-11-12 16:10:41"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-13",
+    "candidate": "Fry",
+    "voteId": 54028,
+    "createdAt": "2020-11-13 18:32:07",
+    "updatedAt": "2020-11-13 18:32:07"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-16",
+    "candidate": "Fry",
+    "voteId": 17216,
+    "createdAt": "2020-11-16 17:18:32",
+    "updatedAt": "2020-11-16 17:18:32"
+  },
+  {
+    "userId": 591573531,
+    "username": "the_coolest_roach",
+    "voteDate": "2020-11-17",
+    "candidate": "Fry",
+    "voteId": 49164,
+    "createdAt": "2020-11-17 16:37:41",
+    "updatedAt": "2020-11-17 16:37:41"
+  },
+  {
+    "userId": 235637321,
+    "username": "tobyk773",
+    "voteDate": "2020-11-06",
+    "candidate": "Goof",
+    "voteId": 85169,
+    "createdAt": "2020-11-06 18:05:49",
+    "updatedAt": "2020-11-06 18:05:49"
+  },
+  {
+    "userId": 235637321,
+    "username": "tobyk773",
+    "voteDate": "2020-11-11",
+    "candidate": "Goof",
+    "voteId": 57959,
+    "createdAt": "2020-11-11 18:33:48",
+    "updatedAt": "2020-11-11 18:33:48"
+  },
+  {
+    "userId": 235637321,
+    "username": "tobyk773",
+    "voteDate": "2020-11-12",
+    "candidate": "Goof",
+    "voteId": 83960,
+    "createdAt": "2020-11-12 16:40:44",
+    "updatedAt": "2020-11-12 16:40:44"
+  },
+  {
+    "userId": 235637321,
+    "username": "tobyk773",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 90776,
+    "createdAt": "2020-11-16 17:02:39",
+    "updatedAt": "2020-11-16 17:02:39"
+  },
+  {
+    "userId": 235637321,
+    "username": "tobyk773",
+    "voteDate": "2020-11-17",
+    "candidate": "Goof",
+    "voteId": 87113,
+    "createdAt": "2020-11-17 16:37:56",
+    "updatedAt": "2020-11-17 16:37:56"
+  },
+  {
+    "userId": 592912216,
+    "username": "ttv_jazziez",
+    "voteDate": "2020-11-03",
+    "candidate": "Fry",
+    "voteId": 55242,
+    "createdAt": "2020-11-03 14:43:32",
+    "updatedAt": "2020-11-03 14:43:32"
+  },
+  {
+    "userId": 592912216,
+    "username": "ttv_jazziez",
+    "voteDate": "2020-11-05",
+    "candidate": "Fry",
+    "voteId": 87818,
+    "createdAt": "2020-11-05 19:38:37",
+    "updatedAt": "2020-11-05 19:38:37"
+  },
+  {
+    "userId": 132088587,
+    "username": "vegandinuguan",
+    "voteDate": "2020-11-11",
+    "candidate": "Fry",
+    "voteId": 68090,
+    "createdAt": "2020-11-11 18:33:43",
+    "updatedAt": "2020-11-11 18:33:43"
+  },
+  {
+    "userId": 132088587,
+    "username": "vegandinuguan",
+    "voteDate": "2020-11-13",
+    "candidate": "Goof",
+    "voteId": 96141,
+    "createdAt": "2020-11-13 18:53:55",
+    "updatedAt": "2020-11-13 18:53:55"
+  },
+  {
+    "userId": 132088587,
+    "username": "vegandinuguan",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 37630,
+    "createdAt": "2020-11-16 17:09:04",
+    "updatedAt": "2020-11-16 17:09:04"
+  },
+  {
+    "userId": 564140917,
+    "username": "veronicaboop",
+    "voteDate": "2020-11-09",
+    "candidate": "Goof",
+    "voteId": 16117,
+    "createdAt": "2020-11-10 00:53:41",
+    "updatedAt": "2020-11-10 00:53:41"
+  },
+  {
+    "userId": 564140917,
+    "username": "veronicaboop",
+    "voteDate": "2020-11-15",
+    "candidate": "Fry",
+    "voteId": 584,
+    "createdAt": "2020-11-15 21:54:41",
+    "updatedAt": "2020-11-15 21:54:41"
+  },
+  {
+    "userId": 564140917,
+    "username": "veronicaboop",
+    "voteDate": "2020-11-16",
+    "candidate": "Goof",
+    "voteId": 55569,
+    "createdAt": "2020-11-17 02:03:28",
+    "updatedAt": "2020-11-17 02:03:28"
+  }
+]

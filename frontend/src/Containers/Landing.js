@@ -90,11 +90,7 @@ const Landing = () => {
             />
           </div>
         </div>
-        <a
-          href={`https://id.twitch.tv/oauth2/authorize?client_id=${process.env.GATSBY_TWITCH_CLIENT_ID}&redirect_uri=https://www.makeamericagoofagain.com/VoteNow&response_type=token+id_token&scope=openid`}
-        >
-          VOTE NOW
-        </a>
+        <Link to="/Results">View Results</Link>
       </Container>
     </BackgroundImage>
   );
